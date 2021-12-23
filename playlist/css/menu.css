@@ -104,7 +104,7 @@
 }
 
 .submenu:hover .title-submenu {
-	color: #0689BA;
+	color: #2daaed;
 }
 .submenu:hover .hidden-menu {
 	display: flex;
@@ -115,7 +115,7 @@
 	text-decoration: none;
 }
 .submenu a:hover {
-	color: #0689BA;
+	color: #2daaed;
 }
 
 .list{
@@ -141,31 +141,10 @@
 	font-weight: bold;
 }
 
-/*applying this to "BXH", "Chủ Đề", "Top 100" submenu
-*/
-.un-bold {
-	font-weight: 300 !important;
-}
-
-
-
-/* THIS IS CSS FOR RIGHT MENU */
-
-/*to override the border of hidden menu*/
-
-
-
 .submenu-icon {
 	padding-right: 22px;
 }
 
-.bigger {
-	font-size: 1.3em;
-}
-
-.icon-3{
-	padding-right: 0px;
-}
 
 .submenu-icon:hover .title-submenu {
 	color: #999;
@@ -196,9 +175,6 @@
 .list-icon li:last-child {
 	border-bottom: 0px;
 }
-
-.un-margin-bottom {
-	margin-bottom: 0px !important;
 }
 /* main left box 1*/
 .main{
@@ -303,74 +279,71 @@ margin-bottom: 10px;
 	color: #e74c3c;
 }
 /* Main left box 2 */
-.main_container{
-    width:100%;
-    background-color:rgba(41,21,71,0.8);
-    margin-top: 70px;
-}
-.main_articles{
-    height: 400px;
-    box-sizing: border-box;
+.album__container{
 	float: left;
 }
-
-.main_article{
-	float: left;
-    display: block;
-	margin:0 20px 20px 0;
-  
-}
-.title_box_key a{
+.title_box_key_left>h1>a{
+	color: #2daaed;
 	text-decoration: none;
- 	font-size: 30px;
- 	font-weight: 400;
- 	color: #2daaed;
+	font-size: 30px;
+	font-weight: 400;
+
+}
+.list-album {
+	font-weight: 300;
+	width: 800px;
+	height: max-content;
+	margin-bottom: 10px;
+
 }
 
-.main_article img{
-    border-radius: 3px;
-}
-.main_article-icon{
-    width: 152px;
-    height:152px;
-    background-color: rgba(0,0,0,0.5);;
-    position: absolute;
-    border-radius: 3px;
-	bottom: 192px;
-    text-transform:uppercase;
-    display: none;
+.list-album-content-box {
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+	display: flex;
 }
 
-.main_article-icon span{
-    color:whitesmoke;
-	font-size: 50px;
-	margin-left: 50px;
+.list-album-content {
+	margin-right: 19px;
+	display: list-item;
 }
-
-.main_article:hover .main_article-icon{
-    display:block;
+.list-album-content:hover .overlay-hover{
     display: flex;
-    justify-content: space-between;
     align-items: center;
     cursor: pointer;
-	float: left;
+	background-color: rgba(0,0,0,0.6);
+	transition: all 0.5s;
 }
-.info-album >h1> a{
-text-decoration: none;
-font-size: 14px;
-color: rgba(0,0,0,0.88);
-font-weight: normal;
-overflow: hidden;
-text-overflow: ellipsis;
-}
-.info-album p a{
+.list-album-content a {
 	text-decoration: none;
-	color: rgba(0,0,0,0.88);
+}
+
+
+.list-album-image {
+	margin-bottom: 10px;
+	position: relative;
+}
+.overlay-hover{
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	color: whitesmoke;
+	display: none;
+} 
+.the-name-song-list-album-link{
+	color: black;
+	font-size: 16px;
+}
+.name-singer-top-music{
+	color: black;
 	font-size: 12px;
 }
-.info-album a:hover{
-	color: #2daaed;
-}
+
 
 /* css box-right */
 .box-right{
@@ -382,76 +355,54 @@ text-overflow: ellipsis;
 .title_box_key_right>h3>a{
 	text-decoration: none;
 	font-size: 30px;
-	font-weight: normal;
+	font-weight: 300;
 	color: #2daaed;
-	margin-left: 30px;
 }
-.singer-info{
+.list-singer-content-box{
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
 	display: flex;
-	align-items: center;
 }
-.list-info-singer_1 img{
-	margin-top: 10px;
+.list-singer-content{
+	display: list-item;
 }
-
-.singer-name-hot_1{
-    width: 310px;
-    height:310px;
-    background-color: rgba(0,0,0,0.6);;
-    position: absolute;
-    border-radius: 3px;
-    display: none;
-	bottom: 320px;
-}
-
-.singer-name-hot_1 span{
-    color:whitesmoke;
-	font-size: 20px;
-	margin-left: 100px;
-}
-
-.list-info-singer_1:hover .singer-name-hot_1{
-    display:block;
+.list-singer-content:hover .overlay-hover-1{
     display: flex;
-    justify-content: space-between;
     align-items: center;
     cursor: pointer;
-	float: left;
+	background-color: rgba(0,0,0,0.6);
+	transition: all 0.5s;
 }
-
-.list-info-singer_1 img{
-	margin-top: 10px;
-	
+.list-singer-content a {
+	text-decoration: none;
 }
-
-/* ------------------------*/
-
-.singer-name-hot_2{
-    width: 152px;
-    height:152px;
-    background-color: rgba(0,0,0,0.6);;
-    position: absolute;
-    border-radius: 3px;
-    display: none;
-	bottom: 160px;
+.list-singer-image{
+	margin-bottom: 10px;
+	margin-right: 10px;
+	position: relative;
 }
-
-.singer-name-hot_2>span{
-    color:whitesmoke;
-	font-size: 15px;
+.overlay-hover-1{
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	display: flex;
 	justify-content: center;
+	align-items: center;
+	position: absolute;
+	color: whitesmoke;
+	display: none;
 }
-
-.list-info-singer_2:hover .singer-name-hot_2{
-    display:block;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
-	float: left;
+.info-name-singer{
+	color: whitesmoke;
+	font-size: 30px;
 }
-.list-info-singer_2 img{
-	margin-top: 10px;
-	margin-right: 10px
-	
+.info-name-singer:hover{
+	color: whitesmoke;
+}
+.info-name-singer-2{
+	color: whitesmoke;
+}
+.info-name-singer-2:hover{
+	color: whitesmoke;
 }
