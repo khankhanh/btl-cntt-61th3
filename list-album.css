@@ -20,6 +20,9 @@
 .list-album-content {
     position: relative;
     margin-right: 19px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .list-album-content a {

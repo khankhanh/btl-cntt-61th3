@@ -1,3 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 .container {
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -25,8 +31,7 @@
 
 /*create a space between to menu-bar*/
 
-.main,
-.right-sidebar {
+.main {
     margin-top: 50px;
 }
 
