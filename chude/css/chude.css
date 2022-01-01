@@ -184,142 +184,119 @@
 .list-icon li:last-child {
 	border-bottom: 0px;
 }
-
-/* main left box 1*/
-.main{
-	width: 100%;
-	position: relative;
-	top: 53px;
+/* css main*/
+.main-box-top{
+	margin-top: 53px;
 }
-.box-container{
-	height: 100%;
+.carousel-item p{
+    margin-top: 8px;
+    margin-bottom: 8px;
+    font-size: 14px;
+    line-height: 20px;
+    width: 100%;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: text-bottom;
 }
-.box-container .box-left{
-	width: 60%;
-	margin-left: 150px;
-	float: left;
-	margin-right: 5px;
+.box-content {
+    float: left;
+    width: 100%;
+    margin: 20px 0 0 0;
 }
-.box-left .box_cata_control{
-	float: left;
-	margin: 0;
-	margin-top: 10px;
+.content-wrap {
+    max-width: 1170px;
+    margin: 0 auto;
+    position: relative;
+    padding: 0 10px;
 }
-.detail_menu_browsing_dashboard{
-	width: 840px;
-	float: left;
-	margin-bottom: 10px;
+.list_topic_full {
+    width: 1170px;
+    float: left;
+    margin-bottom: 10px;
 }
-.detail_menu_browsing_dashboard .cate{
-    height: 70px;
+.title_box_key {
+    width: 100%;
+    float: left;
+	margin-top: 15px;
+}
+.title_box_key h1{
+    float: left;
+    display: block;
+    width: auto;
+    font-size: 26px;
+    text-transform: uppercase;
+    font-weight: 400;
+    line-height: 36px;
+    margin: 0 0 10px 0;
+    color: #23262d;
+}
+.title_box_key h1 a{
+    color: #2daaed;
+    background: url(https://stc-id.nixcdn.com/v11/images/icon-repeat.png) right -155px no-repeat;
+    text-transform: uppercase;
+    padding: 0 20px 0 0;
+    font-weight: 400 !important;
 	text-decoration: none;
 }
-.detail_menu_browsing_dashboard h3{
-	font-size: 15px;
-	text-transform: uppercase;
-	font-weight: bold;
-	cursor:context-menu;
+.topic_more {
+    float: left;
+    width: 1170px;
+    padding: 0 0 10px 0;
 }
-
-.detail_menu_browsing_dashboard  li{
-text-decoration: none;
-list-style-type: none!important;
-width: 160px;
-float: left;
-margin-bottom: 10px;
+.fram_select {
+    width: 1170px;
+    float: left;
+    overflow: hidden;
 }
-.detail_menu_browsing_dashboard  a:hover{
-	background-color: #e74c3c;
-	color: white;
-} 
-.detail_menu_browsing_dashboard .cate a{
-	background: none !important;
+.topic_more ul {
+    float: left;
+    width: 1200px;
+    padding: 0px 0 0 0;
 }
-.detail_menu_browsing_dashboard li a{
-	text-decoration: none;
-	line-height: 22px;
-	color: black;
-	width: auto;
-	border-radius: 5px;
-	background-size: 17px auto;
-	float: left;
-	display: list-item;
-	background: url(https://stc-id.nixcdn.com/v11/images/icon-repeat.png) 0px -2002px no-repeat;
-	background-size: 17px auto;
-	padding: 2px 10px 2px 18px;
-}
-.detail_menu_browsing_dashboard li a.active{
-	background-color: #e74c3c;
-	color: white;
-
-}
-.cate a:hover{
-	background-color: white;
-}
-.detail_menu_browsing_dashboard .line{
-	width: 100%;
-	border-bottom: 1px solid #e5e5e5;
-	height: 1px;
-	margin-bottom: 10px;
-}
-.view_more_list {
-	position: relative;
-}
-
- .dot_more{
-	position: absolute;
-	margin-top: 30px;
-	box-shadow: 0 0 10px rgba(0,0,0,0.3);
-	display: none;
-	background-color: white;
-
-}
-
-.detail_menu_browsing_dashboard li:hover .dot_more{
-	display:block;
-}
-#listchild_aumy{
-	cursor: pointer;
-	color: #999;
-
-}
-#listchild_aumy:hover{
-	color: white;
-}
-
-.dot_more a:hover{
-	background-color: white;
-	color: #e74c3c;
-}
-/* Main left box 2 */
-.album__container{
-	float: left;
-}
-.title_box_key_left>h1>a{
-	color: #2daaed;
-	text-decoration: none;
-	font-size: 30px;
-	font-weight: 400;
-
-}
-.list-album {
-	font-weight: 300;
-	width: 800px;
-	height: max-content;
-	margin-bottom: 10px;
-}
-
-.list-album-content-box {
-	margin: 0px;
-	padding: 0px;
+.topic_more ul li {
+    float: left;
+    width: 368px;
+    padding: 0px 0px 5px 0px;
+    margin-right: 27px;
 	list-style: none;
-	display: flex;
 }
-
-.list-album-content {
-	margin-right: 19px;
-	display: list-item;
-	width: 100%;
+.box_info_show {
+    margin: 40px 0px 0 375px;
+    background: #ffffff;
+    border: 1px solid #d9d9d9;
+    padding: 0px;
+    width: 300px;
+    box-shadow: 0 3px 8px rgb(#333);
+    position: absolute;
+    z-index: 200;
+}
+.dot_show_menu {
+    background: url(https://stc-id.nixcdn.com/v11/images/dot_show_menu_left.png);
+    width: 13px;
+    height: 24px;
+    position: absolute;
+    margin: 20px 0 0 -12px;
+}
+.box-info-detail {
+    float: left;
+    padding: 10px;
+}
+.box-info-detail h3 {
+    float: left;
+    width: 100%;
+    font-size: 18px;
+    padding: 0 0 5px 0;
+	font-weight: normal;
+}
+.box-info-detail p {
+    float: left;
+    width: 100%;
+    font-size: 14px;
+    color: #555555;
+    line-height: 1.5;
+	text-align: justify;
 }
 @keyframes fadeIn {
 	0%{
@@ -329,21 +306,18 @@ margin-bottom: 10px;
 		opacity: 1;
 	}
 }
-.list-album-content:hover .overlay-hover{
+.box_absolute {
+    position: relative;
+    width: 368px;
+    display: block;
+    background: #000000;
+}
+.box_absolute:hover .overlay-hover{
     display: flex;
     align-items: center;
     cursor: pointer;
 	background-color: rgba(0,0,0,0.6);
 
-}
-.list-album-content a {
-	text-decoration: none;
-}
-
-
-.list-album-image {
-	margin-bottom: 10px;
-	position: relative;
 }
 .overlay-hover{
 	width: 100%;
@@ -357,106 +331,60 @@ margin-bottom: 10px;
 	display: none;
 	animation: fadeIn 0.25s ease-in;
 } 
-.the-name-song-list-album-link{
-	color: black;
-	font-size: 16px;
-}
-.name-singer-top-music{
-	color: black;
-	font-size: 12px;
-}
-.list-album-image img{
-	width: 100%;
-}
-
-/* css box-right */
-.box-right{
-	float: left;
-	margin-top: 15px;
-
-}
-
-.title_box_key_right>h3>a{
-	text-decoration: none;
-	font-size: 30px;
-	font-weight: 300;
-	color: #2daaed;
-}
-.list-singer-content-box{
-	margin: 0px;
-	padding: 0px;
-	list-style: none;
-	display: flex;
-
-}
-.list-singer-content{
-	display: list-item;
-	width: 100%;
-}
-.list-singer-content:hover .overlay-hover-1{
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-	background-color: rgba(0,0,0,0.6);
-	transition: all 0.5s;
-}
-.list-singer-content a {
-	text-decoration: none;
-}
-.list-singer-image{
-	margin-bottom: 10px;
-	margin-right: 10px;
-	position: relative;
-	z-index: -1;
-}
-.overlay-hover-1{
-	width: 100%;
-	height: 100%;
-	top: 0px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	position: absolute;
-	color: whitesmoke;
+.box_info_show{
 	display: none;
+}
+.fram_select li:hover .box_info_show {
+	display: flex;
+    cursor: pointer;
+	display: block;
 	animation: fadeIn 0.25s ease-in;
 }
-.info-name-singer{
-	color: whitesmoke;
-	font-size: 30px;
-}
-.info-name-singer:hover{
-	color: whitesmoke;
-}
-.info-name-singer-2{
-	color: whitesmoke;
-}
-.info-name-singer-2:hover{
-	color: whitesmoke;
+.topic_more img{
+	width: 368px;
+	max-width: 100%;
+	border: 0;
 }
 
-.box_pageview{
-	float: left;
-	width: 55%;
-	text-align: center;
-	height: 40px;
-	margin: 20px 0 20px 150px;
-    background: #e5e5e5;
+.topic_more ul li ul {
+    float: left;
+    width: 368px;
+    padding: 0px 0 0 0;
+	border: 1px solid #d9d9d9;
 }
-.box_pageview a {
-    padding: 7px 15px;
-    font-size: 15px;
-    height: 40px;
-    line-height: 40px;
+.title_choose li{
+    float: left;
+    width: 368px;
+    padding: 5px 0px 5px 0px;
+    margin-bottom: 0px;
+    margin-right: 30px;
+    border: 0px solid #d9d9d9;
+    box-shadow: none;
+}
+.name_song{
 	text-decoration: none;
-	color: black;
+	float: left;
+    font-size: 14px;
+    color: #555555;
+    line-height: 16px;
+    background: url(https://stc-id.nixcdn.com/v11/images/icon-repeat.png) 10px -915px no-repeat;
+    padding: 8px 10px 2px 20px;
+    width: 348px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+	font-weight: normal;
 }
-.box_pageview a:hover{
-	color: #e74c3c;
+.posleft{
+	margin: 40px 0px 0 -308px;
 }
-
-
-
+.posleft .dot_show_menu {
+    background: url(https://stc-id.nixcdn.com/v11/images/dot_show_menu_right.png);
+    width: 13px;
+    height: 24px;
+    position: absolute;
+    margin: 20px 0 0 300px;
+}
 /* css footer */
 .footer{
 	width: 100%;
@@ -748,16 +676,3 @@ margin-bottom: 10px;
 	font-weight: 300;
 	padding-top: 23px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-

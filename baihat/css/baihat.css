@@ -198,7 +198,6 @@
 	width: 60%;
 	margin-left: 150px;
 	float: left;
-	margin-right: 5px;
 }
 .box-left .box_cata_control{
 	float: left;
@@ -299,77 +298,225 @@ margin-bottom: 10px;
 	color: #2daaed;
 	text-decoration: none;
 	font-size: 30px;
-	font-weight: 400;
-
+	font-weight: normal;
+    margin-left: 30px;
 }
-.list-album {
-	font-weight: 300;
-	width: 800px;
-	height: max-content;
-	margin-bottom: 10px;
+.list_music_listgender {
+    width: 840px;
+    float: left;
+    margin-bottom: 50px;
 }
-
-.list-album-content-box {
-	margin: 0px;
-	padding: 0px;
-	list-style: none;
-	display: flex;
+.listgender{
+    list-style-type: none;
 }
-
-.list-album-content {
-	margin-right: 19px;
-	display: list-item;
-	width: 100%;
+.listgender li {
+    width: 100%;
+    float: left;
+    margin-right: 30px;
+    border-top: #ececec solid 1px;
+    padding: 5px 0px;
 }
-@keyframes fadeIn {
-	0%{
-		opacity: 0.5;
-	}
-	100%{
-		opacity: 1;
-	}
-}
-.list-album-content:hover .overlay-hover{
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-	background-color: rgba(0,0,0,0.6);
-
-}
-.list-album-content a {
-	text-decoration: none;
+.box-content-music-list{
+    position: relative;
+    margin: 0;
+    padding: 0;
 }
 
+.info_song{
+    width: calc(100% - 400px);
+    float: left;
+    font-size: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.info_song a{
+    color: rgba(0,0,0,0.88);
+    text-decoration: none;
+    transition: all 0.2s linear;
+}
+.info_song a:hover {
+    color: #2daaed;
+}
+.avatar_song img {
+    width: 60px;
+    height: 60px;
+    float: left;
+    margin-right: 16px;
+    vertical-align: middle;
+    border: 0;
 
-.list-album-image {
-	margin-bottom: 10px;
-	position: relative;
 }
-.overlay-hover{
-	width: 100%;
-	height: 100%;
-	top: 0px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	position: absolute;
-	color: whitesmoke;
-	display: none;
-	animation: fadeIn 0.25s ease-in;
-} 
-.the-name-song-list-album-link{
-	color: black;
-	font-size: 16px;
+.list_mark{
+    float: left;
+    width: 150px;
+    height: 100%;
+    margin-right: 20px;
 }
-.name-singer-top-music{
-	color: black;
-	font-size: 12px;
+
+.info_song h2{
+    display: block;
+    margin-bottom: 20px;
+    height: 20px;
 }
-.list-album-image img{
-	width: 100%;
+.name_song{
+    font-size: 16px;
+    float: none;
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 24px;
+    font-weight: normal;
+}
+.name_sing_under {
+    display: block;
+}
+.list_mark{
+    margin-top: 17px;
+    float: left;
+    width: 150px;
+    height: 100%;
+    margin-right: 20px;
+}
+.icon-tag-official{
+    padding: 1px 8px;
+    font-size: 13px;
+    text-transform: uppercase;
+    background: #ccc;
+    color: rgba(255,255,255,1.00);
+    border-radius: 3px;
+    margin: 0 5px 0 0;
+}
+.icon-tag-hd{
+    padding: 1px 8px;
+    font-size: 13px;
+    text-transform: uppercase;
+    background: #00adef;
+    color: rgba(255,255,255,1.00);
+    border-radius: 3px;
+    margin: 0 5px 0 0;
+}
+.icon-tag-lossless{
+    padding: 1px 8px;
+    font-size: 13px;
+    text-transform: uppercase;
+    background: #e74c3c;
+    color: rgba(255,255,255,1.00);
+    border-radius: 3px;
+    margin: 0 5px 0 0;
+}
+.icon_listen{
+    float: left;
+    position: relative;
+    color: #999999;
+    right: 0;
+    font-size: 12px;
+    background: url(https://stc-id.nixcdn.com/v11/images/icon-repeat.png) left -194px no-repeat;
+    padding-left: 15px;
+    line-height: 24px;
+    display: block;
+    margin: 18px 0 0 0;
+}
+.box_song_action{
+    float: right;
+    position: relative;
+    margin-top: 20px;
+    display: block;
+    width: 95px;
+    background: #FFF;
+    height: 14px;
+    right: 0;
+    padding: 0 0 0 10px;
+}
+.button_playing{
+    width: 10px;
+    height: 14px;
+    background: url(https://stc-id.nixcdn.com/v11/images/icon.png) -30px top no-repeat;
+    display: block;
+    float: left;
+    margin-right: 12px;
+}
+.button_add_playlist{
+    width: 16px;
+    height: 14px;
+    background: url(https://stc-id.nixcdn.com/v11/images/icon.png) -44px top no-repeat;
+    display: block;
+    float: left;
+    margin: 0px 12px 0px 0px;
+}
+.button_new_window{
+    width: 14px;
+    height: 14px;
+    background: url(https://stc-id.nixcdn.com/v11/images/icon.png) left top no-repeat;
+    display: block;
+    float: left;
+    margin: 0 15px 0px 0px;
 }
 
 /* css box-right */
+.box-right{
+    float: left;
+}
+/* css box-right 1 */
+.box_chart_music {
+    float: left;
+    width: 300px;
+    padding: 0 0 10px 0;
+    margin-top: 10px;
+}
+.title_box_key {
+    width: 100%;
+    float: left;
+}
+.title_box_key h3 {
+    color: #2daaed;
+    float: left;
+    display: block;
+    width: auto;
+    font-size: 26px;
+    text-transform: uppercase;
+    font-weight: 300;
+    line-height: 36px;
+    margin: 0 0 10px 0;
+}
+.title_box_key h3 a{
+    color: #2daaed;
+    text-transform: uppercase;
+    padding: 0 20px 0 0;
+    font-weight: 400 !important;
+    text-decoration: none;
+}
+
+.btn_tab_select {
+    float: right;
+    padding: 0px 0px;
+    width: 300px;
+    margin-bottom: 20px;
+    height: 32px;
+    background: #e5e5e5;
+    line-height: 32px;
+    border-radius: 16px;
+    overflow: hidden;
+}
+.btn_tab_select a{
+    text-decoration: none;
+    color: black;
+    float: left;
+    text-align: center;
+    font-size: 14px;
+    width: 100px;
+}
+.btn_tab_select a:hover{
+	color: #fff;
+    background: #e74c3c;
+}
+.btn_tab_select a.active {
+    color: #fff;
+    background: #e74c3c;
+}
+
+/* css box right 2*/
 .box-right{
 	float: left;
 	margin-top: 15px;
@@ -391,7 +538,6 @@ margin-bottom: 10px;
 }
 .list-singer-content{
 	display: list-item;
-	width: 100%;
 }
 .list-singer-content:hover .overlay-hover-1{
     display: flex;
@@ -409,6 +555,14 @@ margin-bottom: 10px;
 	position: relative;
 	z-index: -1;
 }
+@keyframes fadeIn {
+	0%{
+		opacity: 0.5;
+	}
+	100%{
+		opacity: 1;
+	}
+}
 .overlay-hover-1{
 	width: 100%;
 	height: 100%;
@@ -419,7 +573,7 @@ margin-bottom: 10px;
 	position: absolute;
 	color: whitesmoke;
 	display: none;
-	animation: fadeIn 0.25s ease-in;
+    animation: fadeIn 0.25s ease-in;
 }
 .info-name-singer{
 	color: whitesmoke;
@@ -435,6 +589,7 @@ margin-bottom: 10px;
 	color: whitesmoke;
 }
 
+/* page */
 .box_pageview{
 	float: left;
 	width: 55%;
@@ -749,9 +904,7 @@ margin-bottom: 10px;
 	padding-top: 23px;
 }
 
-
-
-
+/* css slide__bar */
 
 
 
