@@ -114,7 +114,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                         
 
                                     </div>
-
+                                    <a class="btn btn-info" href="./../album_detail/index.php?album_id=<?php echo $album['id'] ?>">Danh sách bài hát</a>
                                     <button type="submit" class="btn btn-dark">Sửa album</button>
                                 </form>
                             </div>

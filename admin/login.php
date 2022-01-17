@@ -19,8 +19,8 @@
                 $rs = $db->fetchOne($sql);
                 if($rs > 0){
                     echo "Đăng Nhập Thành Công";
-                    $_SESSION['login'] = $rs['id'] ."-". $rs['userName'];
-                    $_SESSION['avt_Admin'] = $rs['avatarImg'];
+                    $_SESSION['login'] =  $rs['username'];
+                    $_SESSION['img'] = $rs['img'];
                     header("location:./index.php");
                 }else{
                     echo "Đăng Nhập Thất Bại";

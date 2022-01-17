@@ -43,7 +43,7 @@
                 <li class="icons dropdown">
                     <div class="user-img c-pointer position-relative" data-toggle="dropdown">
                         <span class="activity active"></span>
-                        <img src="<?php echo $base_url.$_SESSION['avt_Admin'] ?>" height="40" width="40" alt="">
+                        <img src="<?php echo $base_url.$_SESSION['img'] ?>" height="40" width="40" alt="">
                     </div>
                     <div class="drop-down dropdown-profile animated fadeIn dropdown-menu">
                         <div class="dropdown-content-body">

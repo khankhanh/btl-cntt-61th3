@@ -8,9 +8,8 @@
 </head>
 <?php
 if (isset($_SESSION['login'])) {
-    $session = $_SESSION['login'];
-    $arr = explode("-", $session);
-    $sql = "select * from account where id = $arr[0]";
+    $username = $_SESSION['login'];
+    $sql = "select * from account where username = '$username' ";
     $account = $db->fetchOne($sql);
 }
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -40,18 +39,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $data =
         [
-            // "userName" => $_POST['userName'] ? $_POST['userName'] : '',
-            // "password" => md5($_POST['password']),
-            "displayName" => $_POST['displayName'] ? $_POST['displayName'] : '',
+            "displayname" => $_POST['displayname'] ? $_POST['displayname'] : '',
             "email" => $_POST['email'] ? $_POST['email'] : '',
-            "addr" => $_POST['addr'] ? $_POST['addr'] : '',
-            "sdt" => $_POST['sdt'] ? $_POST['sdt'] : '',
             "role" => $_POST['role'] ? $_POST['role'] : '',
         ];
     if($check){
-        $data["avatarImg"] = "public/img/account/" . $file_name;
+        $data["img"] = "public/img/account/" . $file_name;
     }
-    $update = $db->update('account', $data, array('id' => $arr[0]));
+    $update = $db->update('account', $data, array('username' => $username));
     if ($update > 0) {
         $_SESSION['error'] = "sửa thành công";
         header('Location: ./index.php');
@@ -106,39 +101,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="card-title">Thêm Account</h4>
+                            <h4 class="card-title">Sửa Account</h4>
                             <div class="basic-form">
                                 <form method="POST" action="" enctype="multipart/form-data">
-                                    <!-- <div class="form-group">
-                                        <label>Tài khoản</label>
-                                        <input type="text" required name="userName" class="form-control" placeholder="userName" value="<?php echo $account['userName'] ?>">
-                                    </div> -->
-                                    <!-- <div class="form-row">
-                                        <div class="form-group col-md-6">
-                                            <label>Mật Khẩu</label>
-                                            <input type="password" required name="password" class="form-control">
-                                        </div>
-                                        <div class="form-group col-md-6">
-                                            <label>Nhập lại mật khẩu</label>
-                                            <input type="password" required class="form-control">
-                                        </div>
-                                    </div> -->
+                                    
                                     <div class="form-row">
                                         <div class="form-group col-md-6">
                                             <label>Tên hiển thị</label>
-                                            <input type="text" name="displayName" required class="form-control" placeholder="userName" value="<?php echo $account['displayName'] ?>">
+                                            <input type="text" name="displayname" required class="form-control" placeholder="userName" value="<?php echo $account['username'] ?>">
+                                        </div>
+                                        
+
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <img src="<?php echo $base_url . $account['img'] ?>" width="100" height="100" alt="">
                                         </div>
                                         <div class="form-group col-md-6">
-                                            <label>số điện thoại</label>
-                                            <input type="number" name="sdt" required class="form-control" value="<?php echo $account['sdt'] ?>">
+                                            <input type="file" name="file" class="form-control-file">
                                         </div>
+                                        
 
                                     </div>
-                                    <div class="form-group">
-                                        <label>Địa Chỉ</label>
-                                        <input type="text" name="addr" required class="form-control" placeholder="1234 Main St" value="<?php echo $account['addr'] ?>">
-                                    </div>
-
+                                    
                                     <div class="form-row">
                                         <div class="form-group col-md-6">
                                             <label>Email</label>
@@ -158,10 +143,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                         </div>
 
                                     </div>
-                                    <div class="form-group">
-                                        <img src="<?php echo $base_url . $account['avatarImg'] ?>" width="100" height="100" alt="">
-                                        <input type="file" name="file" class="form-control-file">
-                                    </div>
+                                    
 
                                     <button type="submit" class="btn btn-dark">Sửa Tài Khoản</button>
                                 </form>

@@ -48,8 +48,8 @@
             </li>
 
             <li>
-                <a class="has-arrow" href="<?php echo $base_url ?>admin/comment/index.php" aria-expanded="false">
-                    <i class="icon-note menu-icon"></i><span class="nav-text">Bình Luận</span>
+                <a class="has-arrow" href="<?php echo $base_url ?>admin/music/index.php" aria-expanded="false">
+                    <i class="icon-note menu-icon"></i><span class="nav-text">Bài Hát</span>
                 </a>
                
             </li>

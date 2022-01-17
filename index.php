@@ -1,428 +1,13 @@
-<!DOCTYPE html>
-<html>
+<?php require_once(__DIR__ .'/layout/header.php') ?>
+<?php
+    $sql_cat = "SELECT * FROM `category` WHERE 1";
+    $category = $db->fetchAll($sql_cat);
+    $sql_cat_chill = "SELECT * FROM `cat_chill`";
+    $cat_chill = $db->fetchAll($sql_cat_chill);
+    $sql_country = "SELECT * FROM `country`";
+    $country = $db->fetchAll($sql_country);
 
-<head>
-
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer"
-    />
-    <!-- CSS only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <!-- JavaScript Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet" />
-    <title>Nhạc của tui - Nghe nhạc mới hot</title>
-    <link rel="icon" type="image/png" href="https://stc-id.nixcdn.com/v11/images/favicon_64x64.png">
-    <link rel="stylesheet" type="text/css" href="./public/site/css/index.css">
-
-    <script src="https://kit.fontawesome.com/d04809f9cf.js" crossorigin="anonymous"></script>
-    <style>
-        /* .overlay-hover {
-            display: none;
-        }
-        
-        .list-album-image:hover .list-album-image>.overlay-hover {
-            display: block;
-        } */
-        
-        .main-container {
-            display: flex;
-        }
-        
-        .right-sidebar {
-            padding-left: 40px;
-        }
-    </style>
-</head>
-
-<body>
-    <div class="right_support_online" id="right_support_online">
-        <!--<div class="contact_nct hover">
-            <a id="btnFeedBack" rel="nofollow" href="javascript:;" >&nbsp;</a>     
-            <div class="myTip trans" style="font-size: 12px !important; display: none;">Góp ý</div>
-        </div>-->
-        <!--<div class="clear"></div>-->
-        <!--<div class="offads hover">
-            <a id="_aOnOffAdv" rel="nofollow" href="javascript:;" onclick="NCTAdv.annouceOffAdv();" title="Tắt Quảng Cáo">&nbsp;</a>     
-            <div id="_divOnOffAdv" class="myTip trans" style="top: 40px; font-size: 12px !important; display: none;">Tắt Quảng Cáo</div>
-        </div>-->
-
-
-    </div>
-
-    
-    <div class="header">
-        <div class="container">
-            <div class="menu-bar">
-                <div class="menu left-menu">
-                    <a class="nct-image-link" href="#no">
-                        <img src="./public/site/img/imgheader/nct_image.png" class="nct-image">
-                    </a>
-
-                    <div class="submenu word-0">
-                        <div class="title-submenu-box">
-                            <a class="newver-image-link" href="#no">
-                                <img src="./public/site/img/imgheader/newver.png" class="newver-image">
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="submenu submenu-1">
-                        <div class="title-submenu-box">
-                            <a class="title-submenu active" style="color:rgb(62, 154, 240);" href="baihat.html">Bài Hát</a>
-                        </div>
-                        <div class="hidden-menu">
-                            <ul class="list list-1">
-                                <li><a href="#no" title="VIỆT NAM">VIỆT NAM</a></li>
-                                <li><a href="#no" title="Nhạc Trẻ">Nhạc Trẻ</a></li>
-                                <li><a href="#no" title="Trữ Tình">Trữ Tình</a></li>
-                                <li><a href="#no" title="Remix Việt">Remix Việt</a></li>
-                                <li><a href="#no" title="Rap Việt">Rap Việt</a></li>
-                                <li><a href="#no" title="Tiền Chiến">Tiền Chiến</a></li>
-                                <li><a href="#no" title="Nhạc Trịnh">Nhạc Trịnh</a></li>
-                                <li><a href="#no" title="Rock Việt">Rock Việt</a></li>
-                                <li><a href="#no" title="Cách Mạng">Cách Mạng</a></li>
-                            </ul>
-
-                            <ul class="list list-2">
-                                <li><a href="#no" title="Âu Mỹ">Âu Mỹ</a></li>
-                                <li><a href="#no" title="Pop">Pop</a></li>
-                                <li><a href="#no" title="Rock">Rock</a></li>
-                                <li><a href="#no" title="Electronica/Dance">Electronica/Dance</a></li>
-                                <li><a href="#no" title="R&B/HipHop/Rap">R&B/HipHop/Rap</a></li>
-                                <li><a href="#no" title="Blues/Jazz">Blues/Jazz</a></li>
-                                <li><a href="#no" title="Country">Country</a></li>
-                                <li><a href="#no" title="Latin">Latin</a></li>
-                                <li><a href="#no" title="Indie">Indie</a></li>
-                                <li><a href="#no" title="Âu Mỹ khác">Âu Mỹ khác</a></li>
-                            </ul>
-
-
-                            <ul class="list list-3">
-                                <li><a href="#no" title="Châu Á">Châu Á</a></li>
-                                <li><a href="#no" title="Nhạc Hàn">Nhạc Hàn</a></li>
-                                <li><a href="#no" title="Nhạc Hoa">Nhạc Hoa</a></li>
-                                <li><a href="#no" title="Nhạc Nhật">Nhạc Nhật</a></li>
-                                <li><a href="#no" title="Nhạc Thái">Nhạc Thái</a></li>
-                            </ul>
-
-
-                            <ul class="list list-4">
-                                <li><a href="#no" title="Khác">Khác</a></li>
-                                <li><a href="#no" title="Thiếu Nhi">Thiếu Nhi</a></li>
-                                <li><a href="#no" title="Không Lời">Không Lời</a></li>
-                                <li><a href="#no" title="Beat">Beat</a></li>
-                                <li><a href="#no" title="Thể Loại Khác">Thể Loại Khác</a></li>
-                                <li><a href="#no" title="Tui Hát">Tui Hát</a></li>
-                            </ul>
-
-                        </div>
-                    </div>
-
-
-                    <div class="submenu submenu-2">
-                        <div class="title-submenu-box">
-                            <a class="title-submenu " href="playlist.html">Playlist</a>
-                        </div>
-                        <div class="hidden-menu">
-                            <ul class="list list-1">
-                                <li><a href="#no" title="VIỆT NAM">VIỆT NAM</a></li>
-                                <li><a href="#no" title="Nhạc Trẻ">Nhạc Trẻ</a></li>
-                                <li><a href="#no" title="Trữ Tình">Trữ Tình</a></li>
-                                <li><a href="#no" title="Remix Việt">Remix Việt</a></li>
-                                <li><a href="#no" title="Rap Việt">Rap Việt</a></li>
-                                <li><a href="#no" title="Tiền Chiến">Tiền Chiến</a></li>
-                                <li><a href="#no" title="Nhạc Trịnh">Nhạc Trịnh</a></li>
-                                <li><a href="#no" title="Rock Việt">Rock Việt</a></li>
-                                <li><a href="#no" title="Cách Mạng">Cách Mạng</a></li>
-                            </ul>
-
-                            <ul class="list list-2">
-                                <li><a href="#no" title="Âu Mỹ">Âu Mỹ</a></li>
-                                <li><a href="#no" title="Pop">Pop</a></li>
-                                <li><a href="#no" title="Rock">Rock</a></li>
-                                <li><a href="#no" title="Electronica/Dance">Electronica/Dance</a></li>
-                                <li><a href="#no" title="R&B/HipHop/Rap">R&B/HipHop/Rap</a></li>
-                                <li><a href="#no" title="Blues/Jazz">Blues/Jazz</a></li>
-                                <li><a href="#no" title="Country">Country</a></li>
-                                <li><a href="#no" title="Latin">Latin</a></li>
-                                <li><a href="#no" title="Indie">Indie</a></li>
-                                <li><a href="#no" title="Âu Mỹ khác">Âu Mỹ khác</a></li>
-
-                            </ul>
-
-
-                            <ul class="list list-3">
-                                <li><a href="#no" title="Châu Á">Châu Á</a></li>
-                                <li><a href="#no" title="Nhạc Hàn">Nhạc Hàn</a></li>
-                                <li><a href="#no" title="Nhạc Hoa">Nhạc Hoa</a></li>
-                                <li><a href="#no" title="Nhạc Nhật">Nhạc Nhật</a></li>
-                                <li><a href="#no" title="Nhạc Thái">Nhạc Thái</a></li>
-                            </ul>
-
-
-                            <ul class="list list-4">
-                                <li><a href="#no" title="Khác">Khác</a></li>
-                                <li><a href="#no" title="Thiếu Nhi">Thiếu Nhi</a></li>
-                                <li><a href="#no" title="Không Lời">Không Lời</a></li>
-                                <li><a href="nhacphim.html" title="Nhạc Phim">Nhạc Phim</a></li>
-                                <li><a href="#no" title="Thể Loại Khác">Thể Loại Khác</a></li>
-
-
-                            </ul>
-
-                        </div>
-                    </div>
-
-
-                    <div class="submenu submenu-3">
-                        <div class="title-submenu-box">
-                            <a class="title-submenu" href="tuyentap.html">Tuyển Tập</a>
-                        </div>
-                        <div class="hidden-menu">
-                            <ul class="list list-1">
-                                <li><a href="#no" title="THỂ LOẠI">THỂ LOẠI</a></li>
-                                <li><a href="#no" title="Nhạc Trẻ">Nhạc Trẻ</a></li>
-                                <li><a href="#no" title="Trữ Tình">Trữ Tình</a></li>
-                                <li><a href="#no" title="Pop">Pop</a></li>
-                                <li><a href="#no" title="Nhạc Hàn">Nhạc Hàn</a></li>
-                                <li><a href="#no" title="Nhạc Hoa">Nhạc Hoa</a></li>
-                                <li><a href="#no" title="Soundtrack">Soundtrack</a></li>
-                                <li><a href="#no" title="Không Lời">Không Lời</a></li>
-                            </ul>
-
-                            <ul class="list list-2">
-                                <li><a href="#no" title="TÂM TRẠNG">TÂM TRẠNG</a></li>
-                                <li><a href="#no" title="Buồn">Buồn</a></li>
-                                <li><a href="#no" title="Hưng Phấn">Hưng Phấn</a></li>
-                                <li><a href="#no" title="Nhạy Cảm">Nhạy Cảm</a></li>
-                                <li><a href="#no" title="Nhớ Nhung">Nhớ Nhung</a></li>
-                                <li><a href="#no" title="Thất Tình">Thất Tình</a></li>
-                                <li><a href="#no" title="Thư Giãn">Thư Giãn</a></li>
-                                <li><a href="#no" title="Vui Vẻ">Vui Vẻ</a></li>
-                            </ul>
-
-
-                            <ul class="list list-3">
-                                <li><a href="#no" title="KHUNG CẢNH">KHUNG CẢNH</a></li>
-                                <li><a href="#no" title="Cafe">Cafe</a></li>
-                                <li><a href="#no" title="Bar - Club">Bar - Club</a></li>
-                                <li><a href="#no" title="Phòng Trà">Phòng Trà</a></li>
-                                <li><a href="#no" title="Tắm - Bới Lội">Tắm - Bơi Lội</a></li>
-                                <li><a href="#no" title="Tập Gym">Tập Gym</a></li>
-                                <li><a href="#no" title="Lãng Mạn">Lãng Mạn</a></li>
-                                <li><a href="#no" title="Mưa">Mưa</a></li>
-
-                            </ul>
-
-
-                            <ul class="list list-4">
-                                <li><a href="#no" title="CHỦ ĐỀ">CHỦ ĐỀ</a></li>
-                                <li><a href="#no" title="Tình Yêu">Tình Yêu</a></li>
-                                <li><a href="#no" title="Top 100">Top 100</a></li>
-                                <li><a href="#no" title="Weekend">Weekend</a></li>
-                                <li><a href="#no" title="Chill Out">Chill Out</a></li>
-                                <li><a href="#no" title="Bất Hủ">Bất Hủ</a></li>
-                                <li><a href="#no" title="Song Ca">Song Ca</a></li>
-                                <li><a href="#no" title="Mashup">Mashup</a></li>
-                            </ul>
-
-                        </div>
-                    </div>
-
-                    <div class="submenu submenu-4">
-                        <div class="title-submenu-box">
-                            <a class="title-submenu" href="#no" title="Video">Video</a>
-                        </div>
-                        <div class="hidden-menu">
-                            <ul class="list list-1">
-                                <li><a href="#no" title="VIỆT NAM">VIỆT NAM</a></li>
-                                <li><a href="#no" title="Nhạc Trẻ">Nhạc Trẻ</a></li>
-                                <li><a href="#no" title="Trữ Tình">Trữ Tình</a></li>
-                                <li><a href="#no" title="Cách Mạng">Cách Mạng</a></li>
-                                <li><a href="#no" title="Rap Việt">Rap Việt</a></li>
-                                <li><a href="#no" title="Rock Việt">Rock Việt</a></li>
-                            </ul>
-
-                            <ul class="list list-2">
-                                <li><a href="#no" title="Âu Mỹ">Âu Mỹ</a></li>
-                                <li><a href="#no" title="Pop">Pop</a></li>
-                                <li><a href="#no" title="Rock">Rock</a></li>
-                                <li><a href="#no" title="Electronica/Dance">Electronica/Dance</a></li>
-                                <li><a href="#no" title="R&B/HipHop/Rap">R&B/HipHop/Rap</a></li>
-                                <li><a href="#no" title="Blues/Jazz">Blues/Jazz</a></li>
-                                <li><a href="#no" title="Country">Country</a></li>
-                                <li><a href="#no" title="Latin">Latin</a></li>
-                                <li><a href="#no" title="Indie">Indie</a></li>
-                                <li><a href="#no" title="Âu Mỹ khác">Âu Mỹ khác</a></li>
-                            </ul>
-
-
-                            <ul class="list list-3">
-                                <li><a href="#no" title="Châu Á">Châu Á</a></li>
-                                <li><a href="#no" title="Nhạc Hàn">Nhạc Hàn</a></li>
-                                <li><a href="#no" title="Nhạc Hoa">Nhạc Hoa</a></li>
-                                <li><a href="#no" title="Nhạc Nhật">Nhạc Nhật</a></li>
-                                <li><a href="#no" title="Nhạc Thái">Nhạc Thái</a></li>
-
-                            </ul>
-
-
-                            <ul class="list list-4">
-                                <li><a href="#no" title="KARAOKE">KARAOKE</a></li>
-                                <li><a href="#no" title="Nhạc Trẻ">Nhạc Trẻ</a></li>
-                                <li><a href="#no" title="Trữ Tình">Trữ Tình</a></li>
-                                <li><a href="#no" title="Remix Việt">Remix Việt</a></li>
-                                <li><a href="#no" title="Thiếu Nhi">Thiếu Nhi</a></li>
-                                <li><a href="#no" title="Âu Mỹ">Âu Mỹ</a></li>
-                                <li><a href="#no" title="Thể Loại Khác">Thể Lọai Khác</a></li>
-                            </ul>
-
-                            <ul class="list list-5">
-                                <li><a href="#no" title="KHÁC">KHÁC</a></li>
-                                <li><a href="#no" title="Clip Vui">Clip Vui</a></li>
-                                <li><a href="#no" title="Hài Kịch">Hài Kịch</a></li>
-                                <li><a href="#no" title="Thiếu Nhi">Thiếu Nhi</a></li>
-                                <li><a href="#no" title="Thể Loại Khác">Thể Lọai Khác</a></li>
-                                <li><a href="#no" title="Giải Trí Khác">Giải Trí Khác</a></li>
-                                <li><a href="#no" title="Phim Việt Nam">Phim Việt Nam</a></li>
-                            </ul>
-
-                        </div>
-                    </div>
-
-                    <div class="submenu submenu-5">
-                        <div class="title-submenu-box">
-                            <a class="title-submenu" href="#no">BXH</a>
-                        </div>
-                        <div class="hidden-menu">
-                            <ul class="list list-1">
-                                <li class="un-bold"><a href="#no" title="Việt Nam">Việt Nam</a></li>
-                                <li><a href="#no" title="Âu Mỹ">Âu Mỹ</a></li>
-                                <li><a href="#no" title="Hàn Quốc">Hàn Quốc</a></li>
-                            </ul>
-
-                        </div>
-                    </div>
-
-
-                    <div class="submenu submenu-6">
-                        <div class="title-submenu-box">
-                            <a class="title-submenu" href="chude.html">Chủ Đề</a>
-                        </div>
-                        <div class="hidden-menu">
-                            <ul class="list list-1">
-                                <li class="un-bold"><a href="#no" title="The Best of 2021">The Best of 2021</a></li>
-                                <li class="un-bold"><a href="#no" title="Merry Christmas">Merry Christmas</a></li>
-                                <li><a href="#no" title="Indie">Indie</a></li>
-                                <li><a href="#no" title="Bất Hủ Âu Mỹ">Bất Hủ Âu Mỹ</a></li>
-                                <li><a href="#no" title="Cover & Mashup">Cover & Mashup</a></li>
-                                <li><a href="#no" title="Lofi">Lofi</a></li>
-                                <li><a href="#no" title="Nhạc Thiếu Nhi">Nhạc Thiếu Nhi</a></li>
-                            </ul>
-
-                            <ul class="list list-2">
-                                <li class="un-bold"><a href="#no" title="Chill Out">Chill Out</a></li>
-                                <li><a href="#no" title="EDM">EDM</a></li>
-                                <li><a href="#no" title="Nhạc Hot">Nhạc Hot</a></li>
-                                <li><a href="#no" title="Nhạc Hoa Lời Việt">Nhạc Hoa Lời Việt</a></li>
-                                <li><a href="#no" title="Coffee Time">Coffee Time</a></li>
-                                <li><a href="#no" title="Nhạc Phim">Nhạc Phim</a></li>
-                                <li><a href="#no" title="Nhạc Buồn">Nhạc Buồn</a></li>
-                            </ul>
-
-
-                            <ul class="list list-3">
-                                <li class="un-bold"><a href="#no" title="Acoustic">Acoustic</a></li>
-                                <li><a href="#no" title="Hải Ngoại">Hải Ngoại</a></li>
-                                <li><a href="#no" title="Remix Việt">Remix Việt</a></li>
-                                <li><a href="#no" title="Bài Hát Yêu Thích">Bài Hát Yêu Thích</a></li>
-                                <li><a href="#no" title="Gym">Gym</a></li>
-                                <li><a href="#no" title="Bolero">Bolero</a></li>
-                                <li><a href="#no" title="Piano">Piano</a></li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="submenu submenu-7">
-                        <div class="title-submenu-box">
-                            <a class="title-submenu" href="#no" title="Top 100">Top 100</a>
-                        </div>
-                        <div class="hidden-menu">
-                            <ul class="list list-1">
-                                <li class="un-bold"><a href="#no" title="Việt Nam">Việt Nam</a></li>
-                                <li><a href="#no" title="Âu Mỹ">Âu Mỹ</a></li>
-                                <li><a href="#no" title="Châu Á">Châu Á</a></li>
-                                <li><a href="#no" title="Không Lời">Không Lời</a></li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="submenu submenu-8">
-                        <div class="title-submenu-box">
-                            <a class="title-submenu" href="#no">
-                                <i class="fas fa-ellipsis-v fa-rotate-90"></i>
-                            </a>
-                        </div>
-                        <div class="hidden-menu">
-                            <ul class="list list-1">
-                                <li class="un-bold"><a href="#no" title="Khám Phá">Khám Phá</a></li>
-                                <li><a href="#no" title="Nghệ Sĩ">Nghệ Sĩ</a></li>
-                                <li><a href="#no" title="Tin Tức Âm Nhạc">Tin Tức Âm Nhạc</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="menu center-menu">
-                    <div class="menu menu-search-box">
-                        <div class="p-1 bg-light ">
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <button id="button-addon2" type="submit" class="btn btn-link " style="color: rgb(182, 180, 180);"><i class="fa fa-search"></i></button>
-                                </div>
-                                <input type="search" placeholder="Tìm kiếm" aria-describedby="button-addon2" class="form-control border-0 bg-light">
-                            </div>
-                        </div>
-                    </div>
-                    <!-- menu-search-box -->
-                    <div class="button-upgrade-item">
-                        <a class="ic-image-link" href="#no">
-                            <img src="./public/site/img/imgheader/ic_store.png" class="ic_store-image">
-                        </a>
-                    </div>
-                    <div class="button-upload-item">
-                        <a class="ic-image-link" href="#no">
-                            <img src="./public/site/img/imgheader/ic_upload.png" class="ic_upload-image">
-                        </a>
-                    </div>
-                    <div class="button-signin-item">
-                        <a class="signin-link" href="#no"> Đăng nhập</a>
-                    </div>
-                    <div class="button-signup-item">
-                        <a href="#no" class="signup-link">Đăng ký </a>
-                    </div>
-                    <div class="hidden-menu hidden-menu-icon">
-                        <ul class="list-icon">
-                            <li class="un-bold"><a href="#no">Giới thiệu</a></li>
-                            <li><a href="#no">Mua NhacCuaTui VIP</a></li>
-                            <li><a href="#no">Thông tin thanh toán</a></li>
-                            <li class="un-margin-bottom"><a href="#no">Tin tức VIP</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- center-menu -->
-            </div>
-            <!-- menu bar-->
-        </div>
-        <hr style="margin-top: 10px;margin-bottom: 0px;">
-    </div>
-
+?>
 
     <footer style="position: relative;">
         <div style="width:1200px;margin:0 auto;" class="main ">
@@ -507,7 +92,7 @@
                             <a href="#no">
                                 <div class="list-album-image Chrismas-Pop" style=" background-image: url('public/site/img/slide-default/chrismas1.png');">
                                     <div class="overlay-hover">
-                                        <i style="padding: 50px 0px 0px 50px ;" class="far fa-play-circle fa-3x play-icon-mv-1"></i>
+                                        <i  class="far fa-play-circle fa-3x play-icon-mv-1"></i>
                                     </div>
 
                                     <div class="view-box">
@@ -524,7 +109,7 @@
                             <a href="#no">
                                 <div class="list-album-image All-I-Want-For-Chrismas" style=" background-image: url('public/site/img/merry-christmas-happy-new-year-2021-greeting-card_155957-327.jpg');">
                                     <div class="overlay-hover">
-                                        <i style="padding: 50px 0px 0px 50px ;" class="far fa-play-circle fa-3x play-icon-mv-1"></i>
+                                        <i  class="far fa-play-circle fa-3x play-icon-mv-1"></i>
                                     </div>
 
                                     <div class="view-box">
@@ -541,7 +126,7 @@
                             <a href="#no">
                                 <div class="list-album-image Its-Chrismas-Time " style="    background-image: url('public/site/img/christmas\ 2.jpg'); ">
                                     <div class="overlay-hover">
-                                        <i style="padding: 50px 0px 0px 50px ;" class="far fa-play-circle fa-3x play-icon-mv-1"></i>
+                                        <i  class="far fa-play-circle fa-3x play-icon-mv-1"></i>
                                     </div>
 
                                     <div class="view-box">
@@ -558,7 +143,7 @@
                             <a href="#no">
                                 <div class="list-album-image Chrimas-Coffeehouse" style="background-image: url('public/site/img/christmas3.jpg');">
                                     <div class="overlay-hover">
-                                        <i style="padding: 50px 0px 0px 50px ;" class="far fa-play-circle fa-3x play-icon-mv-1"></i>
+                                        <i  class="far fa-play-circle fa-3x play-icon-mv-1"></i>
                                     </div>
 
                                     <div class="view-box">
@@ -575,7 +160,7 @@
                             <a href="#no">
                                 <div class="list-album-image Merry-Chrimas" style="  background-image: url('public/site/img/christmas4.jpg');">
                                     <div class="overlay-hover">
-                                        <i style="padding: 50px 0px 0px 50px ;" class="far fa-play-circle fa-3x play-icon-mv-1"></i>
+                                        <i  class="far fa-play-circle fa-3x play-icon-mv-1"></i>
                                     </div>
 
                                     <div class="view-box">
@@ -601,7 +186,7 @@
                             <a href="#no">
                                 <div class="list-album-image Chill" style="background-image: url('public/site/img/slide-default/chill.jpg');">
                                     <div class="overlay-hover">
-                                        <i style="padding: 50px 0px 0px 50px ;" class="far fa-play-circle fa-3x play-icon-mv-1"></i>
+                                        <i  class="far fa-play-circle fa-3x play-icon-mv-1"></i>
                                     </div>
 
                                     <div class="view-box">
@@ -618,7 +203,7 @@
                             <a href="#no">
                                 <div class="list-album-image Pure-piano" style="    background-image: url('public/site/img/slide-default/pure.jpg');">
                                     <div class="overlay-hover">
-                                        <i style="padding: 50px 0px 0px 50px ;" class="far fa-play-circle fa-3x play-icon-mv-1"></i>
+                                        <i  class="far fa-play-circle fa-3x play-icon-mv-1"></i>
                                     </div>
 
                                     <div class="view-box">
@@ -635,7 +220,7 @@
                             <a href="#no">
                                 <div class="list-album-image Relax" style="background-image: url('public/site/img/slide-default/relax.jpg');">
                                     <div class="overlay-hover">
-                                        <i style="padding: 50px 0px 0px 50px ;" class="far fa-play-circle fa-3x play-icon-mv-1"></i>
+                                        <i  class="far fa-play-circle fa-3x play-icon-mv-1"></i>
                                     </div>
 
                                     <div class="view-box">
@@ -652,7 +237,7 @@
                             <a href="#no">
                                 <div class="list-album-image Peaceful" style="background-image: url('public/site/img/slide-default/peaceful.jpg');">
                                     <div class="overlay-hover">
-                                        <i style="padding: 50px 0px 0px 50px ;" class="far fa-play-circle fa-3x play-icon-mv-1"></i>
+                                        <i  class="far fa-play-circle fa-3x play-icon-mv-1"></i>
                                     </div>
 
                                     <div class="view-box">
@@ -669,7 +254,7 @@
                             <a href="#no">
                                 <div class="list-album-image collection" style="    background-image: url('public/site/img/slide-default/collection.jpg');">
                                     <div class="overlay-hover">
-                                        <i style="padding: 50px 0px 0px 50px ;" class="far fa-play-circle fa-3x play-icon-mv-1"></i>
+                                        <i  class="far fa-play-circle fa-3x play-icon-mv-1"></i>
                                     </div>
 
                                     <div class="view-box">
@@ -695,7 +280,7 @@
                             <a href="#no">
                                 <div class="list-album-image Sun" style="    background-image: url('public/site/img/slide-default/sun.jpg');">
                                     <div class="overlay-hover">
-                                        <i style="padding: 50px 0px 0px 50px ;" class="far fa-play-circle fa-3x play-icon-mv-1"></i>
+                                        <i  class="far fa-play-circle fa-3x play-icon-mv-1"></i>
                                     </div>
 
                                     <div class="view-box">
@@ -712,7 +297,7 @@
                             <a href="#no">
                                 <div class="list-album-image Young" style="background-image: url('public/site/img/slide-default/young.jpg');">
                                     <div class="overlay-hover">
-                                        <i style="padding: 50px 0px 0px 50px ;" class="far fa-play-circle fa-3x play-icon-mv-1"></i>
+                                        <i  class="far fa-play-circle fa-3x play-icon-mv-1"></i>
                                     </div>
 
                                     <div class="view-box">
@@ -729,7 +314,7 @@
                             <a href="#no">
                                 <div class="list-album-image The-Past" style="background-image: url('public/site/img/slide-default/the-past.jpg');">
                                     <div class="overlay-hover">
-                                        <i style="padding: 50px 0px 0px 50px ;" class="far fa-play-circle fa-3x play-icon-mv-1"></i>
+                                        <i  class="far fa-play-circle fa-3x play-icon-mv-1"></i>
                                     </div>
 
                                     <div class="view-box">
@@ -746,7 +331,7 @@
                             <a href="#no">
                                 <div class="list-album-image Tear" style="background-image: url('public/site/img/slide-default/tear.webp');">
                                     <div class="overlay-hover">
-                                        <i style="padding: 50px 0px 0px 50px ;" class="far fa-play-circle fa-3x play-icon-mv-1"></i>
+                                        <i  class="far fa-play-circle fa-3x play-icon-mv-1"></i>
                                     </div>
 
                                     <div class="view-box">
@@ -763,7 +348,7 @@
                             <a href="#no">
                                 <div class="list-album-image Staunch" style="background-image: url('public/site/img/slide-default/stauch.jpg');">
                                     <div class="overlay-hover">
-                                        <i style="padding: 50px 0px 0px 50px ;" class="far fa-play-circle fa-3x play-icon-mv-1"></i>
+                                        <i  class="far fa-play-circle fa-3x play-icon-mv-1"></i>
                                     </div>
 
                                     <div class="view-box">
@@ -789,7 +374,7 @@
                             <a href="#no">
                                 <div class="list-album-image King" style="background-image: url('public/site/img/slide-default/king.jpg');">
                                     <div class="overlay-hover">
-                                        <i style="padding: 50px 0px 0px 50px ;" class="far fa-play-circle fa-3x play-icon-mv-1"></i>
+                                        <i  class="far fa-play-circle fa-3x play-icon-mv-1"></i>
                                     </div>
 
                                     <div class="view-box">
@@ -807,7 +392,7 @@
                             <a href="#no">
                                 <div class="list-album-image we" style="    background-image: url('public/site/img/slide-default/da-lab.jpg');">
                                     <div class="overlay-hover">
-                                        <i style="padding: 50px 0px 0px 50px ;" class="far fa-play-circle fa-3x play-icon-mv-1"></i>
+                                        <i  class="far fa-play-circle fa-3x play-icon-mv-1"></i>
                                     </div>
 
                                     <div class="view-box">
@@ -825,7 +410,7 @@
                             <a href="#no">
                                 <div class="list-album-image tiny-love" style="background-image: url('public/site/img/slide-default/tiny.jpg');">
                                     <div class="overlay-hover">
-                                        <i style="padding: 50px 0px 0px 50px ;" class="far fa-play-circle fa-3x play-icon-mv-1"></i>
+                                        <i  class="far fa-play-circle fa-3x play-icon-mv-1"></i>
                                     </div>
 
                                     <div class="view-box">
@@ -843,7 +428,7 @@
                             <a href="#no">
                                 <div class="list-album-image walking-through" style="background-image: url('public/site/img/slide-default/through.jpg');">
                                     <div class="overlay-hover">
-                                        <i style="padding: 50px 0px 0px 50px ;" class="far fa-play-circle fa-3x play-icon-mv-1"></i>
+                                        <i  class="far fa-play-circle fa-3x play-icon-mv-1"></i>
                                     </div>
 
                                     <div class="view-box">
@@ -861,7 +446,7 @@
                             <a href="#no">
                                 <div class="list-album-image twenty-three" style="background-image: url('public/site/img/slide-default/23.jpg');">
                                     <div class="overlay-hover">
-                                        <i style="padding: 50px 0px 0px 50px ;" class="far fa-play-circle fa-3x play-icon-mv-1"></i>
+                                        <i  class="far fa-play-circle fa-3x play-icon-mv-1"></i>
                                     </div>
 
                                     <div class="view-box">
@@ -885,7 +470,7 @@
                             <a href="#no">
                                 <div class="list-album-image chrismas-day" style="background-image: url('public/site/img/slide-default/come.jpg');">
                                     <div class="overlay-hover">
-                                        <i style="padding: 50px 0px 0px 50px ;" class="far fa-play-circle fa-3x play-icon-mv-1"></i>
+                                        <i  class="far fa-play-circle fa-3x play-icon-mv-1"></i>
                                     </div>
 
                                     <div class="view-box">
@@ -903,7 +488,7 @@
                             <a href="#no">
                                 <div class="list-album-image Taylor" style="background-image: url('public/site/img/slide-default/well.jpg');">
                                     <div class="overlay-hover">
-                                        <i style="padding: 50px 0px 0px 50px ;" class="far fa-play-circle fa-3x play-icon-mv-1"></i>
+                                        <i  class="far fa-play-circle fa-3x play-icon-mv-1"></i>
                                     </div>
 
                                     <div class="view-box">
@@ -921,7 +506,7 @@
                             <a href="#no">
                                 <div class="list-album-image Merry" style="background-image: url('public/site/img/slide-default/merry.jpg');">
                                     <div class="overlay-hover">
-                                        <i style="padding: 50px 0px 0px 50px ;" class="far fa-play-circle fa-3x play-icon-mv-1"></i>
+                                        <i  class="far fa-play-circle fa-3x play-icon-mv-1"></i>
                                     </div>
 
                                     <div class="view-box">
@@ -939,7 +524,7 @@
                             <a href="#no">
                                 <div class="list-album-image Sheeran" style="background-image: url('public/site/img/slide-default/ed.jpg');">
                                     <div class="overlay-hover">
-                                        <i style="padding: 50px 0px 0px 50px ;" class="far fa-play-circle fa-3x play-icon-mv-1"></i>
+                                        <i  class="far fa-play-circle fa-3x play-icon-mv-1"></i>
                                     </div>
 
                                     <div class="view-box">
@@ -957,7 +542,7 @@
                             <a href="#no">
                                 <div class="list-album-image jessi" style="background-image: url('public/site/img/slide-default/jessi.png');">
                                     <div class="overlay-hover">
-                                        <i style="padding: 50px 0px 0px 50px ;" class="far fa-play-circle fa-3x play-icon-mv-1"></i>
+                                        <i  class="far fa-play-circle fa-3x play-icon-mv-1"></i>
                                     </div>
 
                                     <div class="view-box">
