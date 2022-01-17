@@ -6,54 +6,22 @@
     $cat_chill = $db->fetchAll($sql_cat_chill);
     $sql_country = "SELECT * FROM `country`";
     $country = $db->fetchAll($sql_country);
+    // b``ai hát
+
+    $sql_music1 = "SELECT * FROM `music` WHERE 1";
+    $music = $db->fetchAll($sql_music1);
+    $sql_album1 = "SELECT * FROM `album` LIMIT 5";
+    $album1 = $db->fetchAll($sql_album1);
+    $sql_album2 = "SELECT * FROM `album` LIMIT 5, 5";
+    $album2 = $db->fetchAll($sql_album2);
+    $sql_album3 = "SELECT * FROM `album` LIMIT 10, 5";
+    $album3 = $db->fetchAll($sql_album3);
 
 ?>
 
     <footer style="position: relative;">
         <div style="width:1200px;margin:0 auto;" class="main ">
-            <!-- <div class="container-fluid">
-                <div class="slide-default">
-                    <div style="max-width: 1300px; margin-left:130px;" id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-indicators">
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
-
-                        </div>
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img src="./slide-default/bestmusic.jpg" class="d-block w-100" alt="...">
-                                <div class="carousel-caption d-none d-md-block">
-
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <img src="./slide-default/music2.jpg" class="d-block w-100" alt="...">
-                                <div class="carousel-caption d-none d-md-block">
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <img src="./slide-default/christmas-2021.jpg" class="d-block w-100" alt="...">
-                                <div class="carousel-caption d-none d-md-block">
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <img src="./slide-default/music1.jpg" class="d-block w-100" alt="...">
-                                <div class="carousel-caption d-none d-md-block">
-                                </div>
-                            </div>
-                        </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Previous</span>
-                    </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Next</span>
-                    </button>
-                    </div>
-                </div> -->
+            
             <div style="padding-top: 30px;" id="carouselExampleIndicators" class="carousel slide " data-bs-ride="carousel">
                 <div class="carousel-indicators">
                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -85,481 +53,88 @@
             <div class="left-sidebar">
                 <div class="list-album Chrismas">
                     <div class="title-top-box">
-                        <a style="text-decoration: none; font-size: 27px; color: #2DAAED;" class="top-box-link uppercase" href="#no">GIÁNG SINH 2021</a>
+                        <a style="text-decoration: none; font-size: 27px; color: #2DAAED;" class="top-box-link uppercase" href="#no">Album</a>
                     </div>
                     <ul style="padding-top: 10px;" class="list-album-content-box">
+                    <?php foreach($album1 as $item) :?> 
                         <li class="list-album-content">
-                            <a href="#no">
-                                <div class="list-album-image Chrismas-Pop" style=" background-image: url('public/site/img/slide-default/chrismas1.png');">
+                            <a href="./playlist.php">
+                                <div class="list-album-image Chrismas-Pop" style=" background-image: url('<?php echo $base_url.$item['img'] ?>');">
                                     <div class="overlay-hover">
                                         <i  class="far fa-play-circle fa-3x play-icon-mv-1"></i>
                                     </div>
 
                                     <div class="view-box">
                                         <i class="fas fa-headphones-alt small"></i>
-                                        <span>1.308</span>
+                                        <span>9.999</span>
                                     </div>
                                 </div>
                             </a>
 
                             <!-- 	reuse top-100-name class in top-100 component -->
-                            <a class="top-100-name list-album-link" href="#no">Chrimas Pop</a>
+                            <a class="top-100-name list-album-link" href="#no"><?php echo $item['name'] ?></a>
                         </li>
-                        <li class="list-album-content">
-                            <a href="#no">
-                                <div class="list-album-image All-I-Want-For-Chrismas" style=" background-image: url('public/site/img/merry-christmas-happy-new-year-2021-greeting-card_155957-327.jpg');">
-                                    <div class="overlay-hover">
-                                        <i  class="far fa-play-circle fa-3x play-icon-mv-1"></i>
-                                    </div>
-
-                                    <div class="view-box">
-                                        <i class="fas fa-headphones-alt small"></i>
-                                        <span>2.941</span>
-                                    </div>
-                                </div>
-                            </a>
-
-                            <!-- 	reuse top-100-name class in top-100 component -->
-                            <a class="top-100-name list-album-link" href="#no">All I Want For Chrismas</a>
-                        </li>
-                        <li class="list-album-content">
-                            <a href="#no">
-                                <div class="list-album-image Its-Chrismas-Time " style="    background-image: url('public/site/img/christmas\ 2.jpg'); ">
-                                    <div class="overlay-hover">
-                                        <i  class="far fa-play-circle fa-3x play-icon-mv-1"></i>
-                                    </div>
-
-                                    <div class="view-box">
-                                        <i class="fas fa-headphones-alt small"></i>
-                                        <span>1.937</span>
-                                    </div>
-                                </div>
-                            </a>
-
-                            <!-- 	reuse top-100-name class in top-100 component -->
-                            <a class="top-100-name list-album-link" href="#no">It's Chrismas Time</a>
-                        </li>
-                        <li class="list-album-content">
-                            <a href="#no">
-                                <div class="list-album-image Chrimas-Coffeehouse" style="background-image: url('public/site/img/christmas3.jpg');">
-                                    <div class="overlay-hover">
-                                        <i  class="far fa-play-circle fa-3x play-icon-mv-1"></i>
-                                    </div>
-
-                                    <div class="view-box">
-                                        <i class="fas fa-headphones-alt small"></i>
-                                        <span>1.948</span>
-                                    </div>
-                                </div>
-                            </a>
-
-                            <!-- 	reuse top-100-name class in top-100 component -->
-                            <a class="top-100-name list-album-link" href="#no">Chrimas Coffeehouse</a>
-                        </li>
-                        <li class="list-album-content">
-                            <a href="#no">
-                                <div class="list-album-image Merry-Chrimas" style="  background-image: url('public/site/img/christmas4.jpg');">
-                                    <div class="overlay-hover">
-                                        <i  class="far fa-play-circle fa-3x play-icon-mv-1"></i>
-                                    </div>
-
-                                    <div class="view-box">
-                                        <i class="fas fa-headphones-alt small"></i>
-                                        <span>1.038</span>
-                                    </div>
-                                </div>
-                            </a>
-
-                            <!-- 	reuse top-100-name class in top-100 component -->
-                            <a class="top-100-name list-album-link" href="#no">Merry Chrimas </a>
-                        </li>
+                    <?php endforeach ?>
+                    
                     </ul>
                 </div>
 
-                <div class="list-album piano">
+                <div class="list-album Chrismas">
                     <div class="title-top-box">
-                        <a style="text-decoration: none; font-size: 27px; color: #2DAAED;" class="top-box-link uppercase" href="#no">PIANO đẶC SẮC NHẤT</a>
+                        <a style="text-decoration: none; font-size: 27px; color: #2DAAED;" class="top-box-link uppercase" href="#no">Album Ngẫu Nhiên</a>
                     </div>
-
                     <ul style="padding-top: 10px;" class="list-album-content-box">
+                    <?php foreach($album2 as $item) :?> 
                         <li class="list-album-content">
-                            <a href="#no">
-                                <div class="list-album-image Chill" style="background-image: url('public/site/img/slide-default/chill.jpg');">
+                            <a href="./playlist.php">
+                                <div class="list-album-image Chrismas-Pop" style=" background-image: url('<?php echo $base_url.$item['img'] ?>');">
                                     <div class="overlay-hover">
                                         <i  class="far fa-play-circle fa-3x play-icon-mv-1"></i>
                                     </div>
 
                                     <div class="view-box">
                                         <i class="fas fa-headphones-alt small"></i>
-                                        <span>1.308</span>
+                                        <span>9.999</span>
                                     </div>
                                 </div>
                             </a>
 
                             <!-- 	reuse top-100-name class in top-100 component -->
-                            <a class="top-100-name list-album-link" href="#no">Chilled with the piano</a>
+                            <a class="top-100-name list-album-link" href="#no"><?php echo $item['name'] ?></a>
                         </li>
-                        <li class="list-album-content">
-                            <a href="#no">
-                                <div class="list-album-image Pure-piano" style="    background-image: url('public/site/img/slide-default/pure.jpg');">
-                                    <div class="overlay-hover">
-                                        <i  class="far fa-play-circle fa-3x play-icon-mv-1"></i>
-                                    </div>
-
-                                    <div class="view-box">
-                                        <i class="fas fa-headphones-alt small"></i>
-                                        <span>2.941</span>
-                                    </div>
-                                </div>
-                            </a>
-
-                            <!-- 	reuse top-100-name class in top-100 component -->
-                            <a class="top-100-name list-album-link" href="#no">Pure Piano Chill</a>
-                        </li>
-                        <li class="list-album-content">
-                            <a href="#no">
-                                <div class="list-album-image Relax" style="background-image: url('public/site/img/slide-default/relax.jpg');">
-                                    <div class="overlay-hover">
-                                        <i  class="far fa-play-circle fa-3x play-icon-mv-1"></i>
-                                    </div>
-
-                                    <div class="view-box">
-                                        <i class="fas fa-headphones-alt small"></i>
-                                        <span>1.937</span>
-                                    </div>
-                                </div>
-                            </a>
-
-                            <!-- 	reuse top-100-name class in top-100 component -->
-                            <a class="top-100-name list-album-link" href="#no">Relaxing Piano</a>
-                        </li>
-                        <li class="list-album-content">
-                            <a href="#no">
-                                <div class="list-album-image Peaceful" style="background-image: url('public/site/img/slide-default/peaceful.jpg');">
-                                    <div class="overlay-hover">
-                                        <i  class="far fa-play-circle fa-3x play-icon-mv-1"></i>
-                                    </div>
-
-                                    <div class="view-box">
-                                        <i class="fas fa-headphones-alt small"></i>
-                                        <span>1.948</span>
-                                    </div>
-                                </div>
-                            </a>
-
-                            <!-- 	reuse top-100-name class in top-100 component -->
-                            <a class="top-100-name list-album-link" href="#no">Peaceful Piano</a>
-                        </li>
-                        <li class="list-album-content">
-                            <a href="#no">
-                                <div class="list-album-image collection" style="    background-image: url('public/site/img/slide-default/collection.jpg');">
-                                    <div class="overlay-hover">
-                                        <i  class="far fa-play-circle fa-3x play-icon-mv-1"></i>
-                                    </div>
-
-                                    <div class="view-box">
-                                        <i class="fas fa-headphones-alt small"></i>
-                                        <span>1.038</span>
-                                    </div>
-                                </div>
-                            </a>
-
-                            <!-- 	reuse top-100-name class in top-100 component -->
-                            <a class="top-100-name list-album-link" href="#no">Thẻ Piano Collection</a>
-                        </li>
+                    <?php endforeach ?>
+                        
                     </ul>
                 </div>
 
-                <div class="list-album feeling">
+                <div class="list-album Chrismas">
                     <div class="title-top-box">
-                        <a style="text-decoration: none; font-size: 27px; color: #2DAAED;" class="top-box-link uppercase" href="#no">THAY LỜI MUỐN NÓI</a>
+                        <a style="text-decoration: none; font-size: 27px; color: #2DAAED;" class="top-box-link uppercase" href="#no">Album Ngẫu Nhiên</a>
                     </div>
-
                     <ul style="padding-top: 10px;" class="list-album-content-box">
+                    <?php foreach($album3 as $item) :?> 
                         <li class="list-album-content">
-                            <a href="#no">
-                                <div class="list-album-image Sun" style="    background-image: url('public/site/img/slide-default/sun.jpg');">
+                            <a href="./playlist.php">
+                                <div class="list-album-image Chrismas-Pop" style=" background-image: url('<?php echo $base_url.$item['img'] ?>');">
                                     <div class="overlay-hover">
                                         <i  class="far fa-play-circle fa-3x play-icon-mv-1"></i>
                                     </div>
 
                                     <div class="view-box">
                                         <i class="fas fa-headphones-alt small"></i>
-                                        <span>1.308</span>
+                                        <span>9.999</span>
                                     </div>
                                 </div>
                             </a>
 
                             <!-- 	reuse top-100-name class in top-100 component -->
-                            <a class="top-100-name list-album-link" href="#no">Một Ngày Đầy Nắng</a>
+                            <a class="top-100-name list-album-link" href="#no"><?php echo $item['name'] ?></a>
                         </li>
-                        <li class="list-album-content">
-                            <a href="#no">
-                                <div class="list-album-image Young" style="background-image: url('public/site/img/slide-default/young.jpg');">
-                                    <div class="overlay-hover">
-                                        <i  class="far fa-play-circle fa-3x play-icon-mv-1"></i>
-                                    </div>
-
-                                    <div class="view-box">
-                                        <i class="fas fa-headphones-alt small"></i>
-                                        <span>2.941</span>
-                                    </div>
-                                </div>
-                            </a>
-
-                            <!-- 	reuse top-100-name class in top-100 component -->
-                            <a class="top-100-name list-album-link" href="#no">Tuổi Xuân Rơi Theo Mối Tình</a>
-                        </li>
-                        <li class="list-album-content">
-                            <a href="#no">
-                                <div class="list-album-image The-Past" style="background-image: url('public/site/img/slide-default/the-past.jpg');">
-                                    <div class="overlay-hover">
-                                        <i  class="far fa-play-circle fa-3x play-icon-mv-1"></i>
-                                    </div>
-
-                                    <div class="view-box">
-                                        <i class="fas fa-headphones-alt small"></i>
-                                        <span>1.937</span>
-                                    </div>
-                                </div>
-                            </a>
-
-                            <!-- 	reuse top-100-name class in top-100 component -->
-                            <a class="top-100-name list-album-link" href="#no">Chuyện Mình Rồi Cùng Sẽ Qua</a>
-                        </li>
-                        <li class="list-album-content">
-                            <a href="#no">
-                                <div class="list-album-image Tear" style="background-image: url('public/site/img/slide-default/tear.webp');">
-                                    <div class="overlay-hover">
-                                        <i  class="far fa-play-circle fa-3x play-icon-mv-1"></i>
-                                    </div>
-
-                                    <div class="view-box">
-                                        <i class="fas fa-headphones-alt small"></i>
-                                        <span>1.948</span>
-                                    </div>
-                                </div>
-                            </a>
-
-                            <!-- 	reuse top-100-name class in top-100 component -->
-                            <a class="top-100-name list-album-link" href="#no">Mưa Hay Nước Mắt</a>
-                        </li>
-                        <li class="list-album-content">
-                            <a href="#no">
-                                <div class="list-album-image Staunch" style="background-image: url('public/site/img/slide-default/stauch.jpg');">
-                                    <div class="overlay-hover">
-                                        <i  class="far fa-play-circle fa-3x play-icon-mv-1"></i>
-                                    </div>
-
-                                    <div class="view-box">
-                                        <i class="fas fa-headphones-alt small"></i>
-                                        <span>1.038</span>
-                                    </div>
-                                </div>
-                            </a>
-
-                            <!-- 	reuse top-100-name class in top-100 component -->
-                            <a class="top-100-name list-album-link" href="#no">Để Mình Nói Những Câu Chân Thành</a>
-                        </li>
+                    <?php endforeach ?>
+                        
                     </ul>
                 </div>
 
-                <div class="list-album new-releases">
-                    <div class="title-top-box">
-                        <a style="text-decoration: none;font-size: 27px; color: #2DAAED;" class="top-box-link uppercase" href="#no">MỚI PHÁT HÀNH</a>
-                    </div>
-
-                    <ul style="padding-top: 10px;" class="list-album-content-box">
-                        <li class="list-album-content">
-                            <a href="#no">
-                                <div class="list-album-image King" style="background-image: url('public/site/img/slide-default/king.jpg');">
-                                    <div class="overlay-hover">
-                                        <i  class="far fa-play-circle fa-3x play-icon-mv-1"></i>
-                                    </div>
-
-                                    <div class="view-box">
-                                        <i class="fas fa-headphones-alt small"></i>
-                                        <span>1.308</span>
-                                    </div>
-                                </div>
-                            </a>
-
-                            <!-- 	reuse top-100-name class in top-100 component -->
-                            <a class="top-100-name list-album-link" href="#no">Đế Vương</a>
-                            <p class="albumHot-singer"><a style="color: grey;font-size: 10px;" class="name-singer-top-music" href="#no">ACV</a></p>
-                        </li>
-                        <li class="list-album-content">
-                            <a href="#no">
-                                <div class="list-album-image we" style="    background-image: url('public/site/img/slide-default/da-lab.jpg');">
-                                    <div class="overlay-hover">
-                                        <i  class="far fa-play-circle fa-3x play-icon-mv-1"></i>
-                                    </div>
-
-                                    <div class="view-box">
-                                        <i class="fas fa-headphones-alt small"></i>
-                                        <span>2.941</span>
-                                    </div>
-                                </div>
-                            </a>
-
-                            <!-- 	reuse top-100-name class in top-100 component -->
-                            <a class="top-100-name list-album-link" href="#no">Chuyện Đôi Ta</a>
-                            <p class="albumHot-singer"><a style="color: grey;font-size: 10px;" class="name-singer-top-music" href="#no">Da-Lab, Emcee L</a></p>
-                        </li>
-                        <li class="list-album-content">
-                            <a href="#no">
-                                <div class="list-album-image tiny-love" style="background-image: url('public/site/img/slide-default/tiny.jpg');">
-                                    <div class="overlay-hover">
-                                        <i  class="far fa-play-circle fa-3x play-icon-mv-1"></i>
-                                    </div>
-
-                                    <div class="view-box">
-                                        <i class="fas fa-headphones-alt small"></i>
-                                        <span>1.937</span>
-                                    </div>
-                                </div>
-                            </a>
-
-                            <!-- 	reuse top-100-name class in top-100 component -->
-                            <a class="top-100-name list-album-link" href="#no">Tiny Love</a>
-                            <p class="albumHot-singer"><a style="color: grey;font-size: 10px;" class="name-singer-top-music" href="#no">Thịnh Duy</a></p>
-                        </li>
-                        <li class="list-album-content">
-                            <a href="#no">
-                                <div class="list-album-image walking-through" style="background-image: url('public/site/img/slide-default/through.jpg');">
-                                    <div class="overlay-hover">
-                                        <i  class="far fa-play-circle fa-3x play-icon-mv-1"></i>
-                                    </div>
-
-                                    <div class="view-box">
-                                        <i class="fas fa-headphones-alt small"></i>
-                                        <span>1.948</span>
-                                    </div>
-                                </div>
-                            </a>
-
-                            <!-- 	reuse top-100-name class in top-100 component -->
-                            <a class="top-100-name list-album-link" href="#no">Bước Qua Nhau</a>
-                            <p class="albumHot-singer"><a style="color: grey;font-size: 10px;" class="name-singer-top-music" href="#no">Vũ</a></p>
-                        </li>
-                        <li class="list-album-content">
-                            <a href="#no">
-                                <div class="list-album-image twenty-three" style="background-image: url('public/site/img/slide-default/23.jpg');">
-                                    <div class="overlay-hover">
-                                        <i  class="far fa-play-circle fa-3x play-icon-mv-1"></i>
-                                    </div>
-
-                                    <div class="view-box">
-                                        <i class="fas fa-headphones-alt small"></i>
-                                        <span>1.038</span>
-                                    </div>
-                                </div>
-                            </a>
-
-                            <!-- 	reuse top-100-name class in top-100 component -->
-                            <a class="top-100-name list-album-link" href="#no">23</a>
-                            <p class="albumHot-singer"><a style="color: grey;font-size: 10px;" class="name-singer-top-music" href="#no">Gừng,Pixel Neko, Bít, ...</a></p>
-                        </li>
-                    </ul>
-
-
-
-
-                    <ul class="list-album-content-box albumHot-content-box">
-                        <li class="list-album-content">
-                            <a href="#no">
-                                <div class="list-album-image chrismas-day" style="background-image: url('public/site/img/slide-default/come.jpg');">
-                                    <div class="overlay-hover">
-                                        <i  class="far fa-play-circle fa-3x play-icon-mv-1"></i>
-                                    </div>
-
-                                    <div class="view-box">
-                                        <i class="fas fa-headphones-alt small"></i>
-                                        <span>212</span>
-                                    </div>
-                                </div>
-                            </a>
-
-                            <!-- 	reuse top-100-name class in top-100 component -->
-                            <a class="top-100-name list-album-link" href="#no">When Chrismas...</a>
-                            <p class="albumHot-singer"><a style="color: grey;font-size: 10px;" class="name-singer-top-music" href="#no">Kelly Clarkson</a></p>
-                        </li>
-                        <li class="list-album-content">
-                            <a href="#no">
-                                <div class="list-album-image Taylor" style="background-image: url('public/site/img/slide-default/well.jpg');">
-                                    <div class="overlay-hover">
-                                        <i  class="far fa-play-circle fa-3x play-icon-mv-1"></i>
-                                    </div>
-
-                                    <div class="view-box">
-                                        <i class="fas fa-headphones-alt small"></i>
-                                        <span>3.663</span>
-                                    </div>
-                                </div>
-                            </a>
-
-                            <!-- 	reuse top-100-name class in top-100 component -->
-                            <a class="top-100-name list-album-link" href="#no">All Too Well</a>
-                            <p class="albumHot-singer"><a style="color: grey;font-size: 10px;" class="name-singer-top-music" href="#no">Taylor Swift</a></p>
-                        </li>
-                        <li class="list-album-content">
-                            <a href="#no">
-                                <div class="list-album-image Merry" style="background-image: url('public/site/img/slide-default/merry.jpg');">
-                                    <div class="overlay-hover">
-                                        <i  class="far fa-play-circle fa-3x play-icon-mv-1"></i>
-                                    </div>
-
-                                    <div class="view-box">
-                                        <i class="fas fa-headphones-alt small"></i>
-                                        <span>3.663</span>
-                                    </div>
-                                </div>
-                            </a>
-
-                            <!-- 	reuse top-100-name class in top-100 component -->
-                            <a class="top-100-name list-album-link" href="#no">Merry-Chrimas</a>
-                            <p class="albumHot-singer"><a style="color: grey;font-size: 10px;" class="name-singer-top-music" href="#no">Mariah Carey</a></p>
-                        </li>
-                        <li class="list-album-content">
-                            <a href="#no">
-                                <div class="list-album-image Sheeran" style="background-image: url('public/site/img/slide-default/ed.jpg');">
-                                    <div class="overlay-hover">
-                                        <i  class="far fa-play-circle fa-3x play-icon-mv-1"></i>
-                                    </div>
-
-                                    <div class="view-box">
-                                        <i class="fas fa-headphones-alt small"></i>
-                                        <span>3.663</span>
-                                    </div>
-                                </div>
-                            </a>
-
-                            <!-- 	reuse top-100-name class in top-100 component -->
-                            <a class="top-100-name list-album-link" href="#no">Bad Habits</a>
-                            <p class="albumHot-singer"><a style="color: grey;font-size: 10px;" class="name-singer-top-music" href="#no">Ed Sheeran</a></p>
-                        </li>
-                        <li class="list-album-content">
-                            <a href="#no">
-                                <div class="list-album-image jessi" style="background-image: url('public/site/img/slide-default/jessi.png');">
-                                    <div class="overlay-hover">
-                                        <i  class="far fa-play-circle fa-3x play-icon-mv-1"></i>
-                                    </div>
-
-                                    <div class="view-box">
-                                        <i class="fas fa-headphones-alt small"></i>
-                                        <span>3.663</span>
-                                    </div>
-                                </div>
-                            </a>
-
-                            <!-- 	reuse top-100-name class in top-100 component -->
-                            <a class="top-100-name list-album-link" href="#no">This Chrismas Day</a>
-                            <p class="albumHot-singer"><a style="color: grey;font-size: 10px;" class="name-singer-top-music" href="#no">Jessi J</a></p>
-                        </li>
-                </div>
-                <div class="list-album mv-hot">
-
-                </div>
                 <div class="list-album list_song">
                     <div class="title-top-box">
                         <a style="text-decoration: none;font-size: 27px; color: #2DAAED;" class="top-box-link uppercase" href="#no">Bài Hát</a>
@@ -907,137 +482,22 @@
                         <a style="margin-right: 150px;float: right;" href="#no" title="BXH Bài hát" class="play_all"></a>
                     </div>
                     <div class="btn_tab_select">
-                        <a id="top20_bai-hat_nhac-viet" onclick="BXH_click(this, 'VN');" href="#no" class="active" title="Việt Nam">Việt Nam</a>
+                        <a id="top20_bai-hat_nhac-viet" onclick="BXH_click(this, 1);" href="#no" class="" title="Việt Nam">Việt Nam</a>
                         <span></span>
-                        <a id="top20_bai-hat_au-my" onclick="BXH_click(this, 'EU');" href="#no" title="Âu Mỹ">Âu Mỹ</a>
+                        <a id="top20_bai-hat_au-my" onclick="BXH_click(this, 2);" href="#no" class="active" title="Âu Mỹ">Âu Mỹ</a>
                         <span></span>
-                        <a id="top20_bai-hat_nhac-han" onclick="BXH_click(this, 'HQ');" href="#no" title="Hàn Quốc">Hàn Quốc</a>
+                        <a id="top20_bai-hat_nhac-han" onclick="BXH_click(this, 3);" href="#no" title="Hàn Quốc">Hàn Quốc</a>
 
                     </div>
 
                     <div class="top-box-mv">
                         <ul id="bxh_data" style="list-style-type: none;">
-                            <li>
-                                <span style="    float: left;
-                                width: 31px;
-                                color: #7a7a7a;
-                                height: 42px;
-                                margin-right: 10px;
-                                font-size: 20px;
-                                text-align: center;
-                                line-height: 42px;
-                                vertical-align: middle;" class="number special-2">2</span>
-                                <div class="info_data">
-
-                                    <h3><a style="font-size: 14px;
-                                        margin: 0 0 4px 0;
-                                        display: -webkit-box;
-                                        -webkit-line-clamp: 2;
-                                        -webkit-box-orient: vertical;
-                                        overflow: hidden;
-                                        text-overflow: ellipsis;
-                                        line-height: 1.3;
-                                        width: 248px;" title="Bước Qua Nhau - Vũ" href="https://www.nhaccuatui.com/bai-hat/buoc-qua-nhau-vu.EdENCgJm9dAa.html" onclick="lt(['home','BXH','click','song','EdENCgJm9dAa','','Nhac Viet']);" ga="_gaq.push(['_trackEvent', 'TOP 20', 'Click', 'Top 20 Bai Hat Trang Chu Nhac Viet']);"
-                                            class="name_song">Bước Qua Nhau</a></h3>
-                                    <h4 style="margin-top: -15px;"><a style="    font-size: 12px;
-                                        color: #a2a2a2;
-                                        line-height: 15px; margin-top: -10px; " href="https://www.nhaccuatui.com/nghe-si-vu.html" class="name_singer" title="Tìm các bài hát, playlist, mv do ca sĩ Vũ trình bày" target="_blank">Vũ</a></h4>
-
-                                </div>
-                                <!--span id="NCTCounter__7120388" class="icon_listen">0</span-->
-                            </li>
-                            <li>
-                                <span style="    float: left;
-                                width: 31px;
-                                color: #7a7a7a;
-                                height: 42px;
-                                margin-right: 10px;
-                                font-size: 20px;
-                                text-align: center;
-                                line-height: 42px;
-                                vertical-align: middle;" class="number special-2">2</span>
-                                <div class="info_data">
-
-                                    <h3><a style="font-size: 14px;
-                                        margin: 0 0 4px 0;
-                                        display: -webkit-box;
-                                        -webkit-line-clamp: 2;
-                                        -webkit-box-orient: vertical;
-                                        overflow: hidden;
-                                        text-overflow: ellipsis;
-                                        line-height: 1.3;
-                                        width: 248px;" title="Bước Qua Nhau - Vũ" href="https://www.nhaccuatui.com/bai-hat/buoc-qua-nhau-vu.EdENCgJm9dAa.html" onclick="lt(['home','BXH','click','song','EdENCgJm9dAa','','Nhac Viet']);" ga="_gaq.push(['_trackEvent', 'TOP 20', 'Click', 'Top 20 Bai Hat Trang Chu Nhac Viet']);"
-                                            class="name_song">Bước Qua Nhau</a></h3>
-                                    <h4 style="margin-top: -15px;"><a style="    font-size: 12px;
-                                        color: #a2a2a2;
-                                        line-height: 15px; margin-top: -10px; " href="https://www.nhaccuatui.com/nghe-si-vu.html" class="name_singer" title="Tìm các bài hát, playlist, mv do ca sĩ Vũ trình bày" target="_blank">Vũ</a></h4>
-
-                                </div>
-                                <!--span id="NCTCounter__7120388" class="icon_listen">0</span-->
-                            </li>
-                            <li>
-                                <span style="    float: left;
-                                width: 31px;
-                                color: #7a7a7a;
-                                height: 42px;
-                                margin-right: 10px;
-                                font-size: 20px;
-                                text-align: center;
-                                line-height: 42px;
-                                vertical-align: middle;" class="number special-2">2</span>
-                                <div class="info_data">
-
-                                    <h3><a style="font-size: 14px;
-                                        margin: 0 0 4px 0;
-                                        display: -webkit-box;
-                                        -webkit-line-clamp: 2;
-                                        -webkit-box-orient: vertical;
-                                        overflow: hidden;
-                                        text-overflow: ellipsis;
-                                        line-height: 1.3;
-                                        width: 248px;" title="Bước Qua Nhau - Vũ" href="https://www.nhaccuatui.com/bai-hat/buoc-qua-nhau-vu.EdENCgJm9dAa.html" onclick="lt(['home','BXH','click','song','EdENCgJm9dAa','','Nhac Viet']);" ga="_gaq.push(['_trackEvent', 'TOP 20', 'Click', 'Top 20 Bai Hat Trang Chu Nhac Viet']);"
-                                            class="name_song">Bước Qua Nhau</a></h3>
-                                    <h4 style="margin-top: -15px;"><a style="    font-size: 12px;
-                                        color: #a2a2a2;
-                                        line-height: 15px; margin-top: -10px; " href="https://www.nhaccuatui.com/nghe-si-vu.html" class="name_singer" title="Tìm các bài hát, playlist, mv do ca sĩ Vũ trình bày" target="_blank">Vũ</a></h4>
-
-                                </div>
-                                <!--span id="NCTCounter__7120388" class="icon_listen">0</span-->
-                            </li>
-                            <li>
-                                <span style="    float: left;
-                                width: 31px;
-                                color: #7a7a7a;
-                                height: 42px;
-                                margin-right: 10px;
-                                font-size: 20px;
-                                text-align: center;
-                                line-height: 42px;
-                                vertical-align: middle;" class="number special-2">2</span>
-                                <div class="info_data">
-
-                                    <h3><a style="font-size: 14px;
-                                        margin: 0 0 4px 0;
-                                        display: -webkit-box;
-                                        -webkit-line-clamp: 2;
-                                        -webkit-box-orient: vertical;
-                                        overflow: hidden;
-                                        text-overflow: ellipsis;
-                                        line-height: 1.3;
-                                        width: 248px;" title="Bước Qua Nhau - Vũ" href="https://www.nhaccuatui.com/bai-hat/buoc-qua-nhau-vu.EdENCgJm9dAa.html" onclick="lt(['home','BXH','click','song','EdENCgJm9dAa','','Nhac Viet']);" ga="_gaq.push(['_trackEvent', 'TOP 20', 'Click', 'Top 20 Bai Hat Trang Chu Nhac Viet']);"
-                                            class="name_song">Bước Qua Nhau</a></h3>
-                                    <h4 style="margin-top: -15px;"><a style="    font-size: 12px;
-                                        color: #a2a2a2;
-                                        line-height: 15px; margin-top: -10px; " href="https://www.nhaccuatui.com/nghe-si-vu.html" class="name_singer" title="Tìm các bài hát, playlist, mv do ca sĩ Vũ trình bày" target="_blank">Vũ</a></h4>
-
-                                </div>
-                                <!--span id="NCTCounter__7120388" class="icon_listen">0</span-->
-                            </li>
+                            
                         </ul>
                     </div>
 
                     <div class="top-box-suggest">
-                        <!--   <img style="height: 250px; width: 350px;" src="./slide-default/bg_discovery_playlist.png" alt="">    -->
+                        <!--   <img style="height: 250px; width: 350px;" src="public/site/img/slide-default/bg_discovery_playlist.png" alt="">    -->
                         <a style="text-decoration: none;" href="#no" class="discovery_playlist_link">
                             <div class="bg_discovery_playlist" style=" height: 260px; width:335px">
                                 <div class="content_discovery_playlist" >
@@ -1416,7 +876,75 @@
             <span class="slider round"></span>
           </label> Tắt Quảng Cáo
     </a>
-    <script src="./main.js"></script>
+
+
+
+<script >
+
+const $ = document.querySelectorAll.bind(document);
+const dataBxh = <?php echo json_encode($music) ?>;
+
+
+
+function BXH_click(e, params) {
+    const bxh_data = $("#bxh_data")[0];
+    const arr_click = $(".btn_tab_select > a");
+
+    for (let i = 0; i < arr_click.length; i++) { // lặp qua 3 thẻ a : VN Aau Mỹ, Hàn Xẻng
+        for (let j = 0; j < arr_click[i].classList.length; j++) // kiểm tra từng thẻ a xem có class acitve
+            if (arr_click[i].classList[j] == 'active') // nếu có thì xóa class active
+                arr_click[i].classList.remove("active");
+    }
+
+    e.classList.add("active");
+
+    // xử lý màu
+
+
+    // xóa đi các thẻ li
+    bxh_data.innerText = '';
+    // duyệt qua tất cả dữ liệu 
+    for (let index = 0; index < dataBxh.length; index++) {
+        if (dataBxh[index].country_id == params) { // kiểm tra type == params
+            const element = dataBxh[index]; // lấy giá trị của giữ liệu trong mảng
+            let node = `<li>
+        <span style="    float: left;
+        width: 31px;
+        color: #7a7a7a;
+        height: 42px;
+        margin-right: 10px;
+        font-size: 20px;
+        text-align: center;
+        line-height: 42px;
+        vertical-align: middle;" class="number special-2">${index}</span>
+        <div class="info_data">
+
+            <h3><a style="font-size: 14px;
+                margin: 0 0 4px 0;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                line-height: 1.3;
+                width: 248px;" title="${element.name} - ${element.author}" href="<?php echo $base_url ?>phatnhac.php?name=${element.slug}" onclick="lt(['home','BXH','click','song','EdENCgJm9dAa','','Nhac Viet']);" ga="_gaq.push(['_trackEvent', 'TOP 20', 'Click', 'Top 20 Bai Hat Trang Chu Nhac Viet']);"
+                    class="name_song">${element.name}</a></h3>
+            <h4 style="margin-top: -15px;"><a style="    font-size: 12px;
+                color: #a2a2a2;
+                line-height: 15px; margin-top: -10px; " href="https://www.nhaccuatui.com/nghe-si-vu.html" class="name_singer" title="Tìm các bài hát, playlist, mv do ca sĩ Vũ trình bày" target="_blank">${element.author}</a></h4>
+
+        </div>
+        <!--span id="NCTCounter__7120388" class="icon_listen">0</span-->
+    </li>`;
+            node = new DOMParser().parseFromString(node, 'text/html'); // chuyển chuỗi về html
+            console.log(node);
+            // thêm vào con của thẻ ul
+            // lấy thẻ li trong đoạn node đã đc convert
+            bxh_data.appendChild(node.children[0].children[1].children[0]);
+        }
+    }
+}
+</script>
 </body>
 
 

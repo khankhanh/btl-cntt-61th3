@@ -1,6 +1,13 @@
 <?php require_once(__DIR__ .'/layout/header.php') ?>
-
-
+<?php require_once(__DIR__ .'/lib/autoload.php') ?>
+<?php
+$sql_album1 = "SELECT * FROM `album` LIMIT 5";
+$album1 = $db->fetchAll($sql_album1);
+$sql_album2 = "SELECT * FROM `album` LIMIT 5, 5";
+$album2 = $db->fetchAll($sql_album2);
+$sql_album3 = "SELECT * FROM `album` LIMIT 10, 5";
+$album3 = $db->fetchAll($sql_album3);
+?>
     <link rel="stylesheet" href="./public/site/css/playlist.css">
 
     <div class="main">
@@ -104,192 +111,54 @@
                         <h1><a title="" href="#no" class="nomore">PLAYLIST HOT NHẤT</a></h1>
                     </div>
                     <ul class="list-album-content-box albumHot-content-box">
+                        <?php foreach($album1 as $item) :?>
                         <li class="list-album-content">
                             <a href="#no">
                                 <div class="list-album-image  LALISA">
-                                    <img src="./public/site/img/playlistHotNhat/lalisa.jpg" alt="">
+                                    <img src="<?php echo $base_url.$item['img'] ?>" alt="">
                                     <div class="overlay-hover">
                                         <i class="far fa-play-circle fa-3x play-icon-mv-1"></i>
                                     </div>
                                 </div>
                             </a>
-                            <a class="the-name-song-list-album-link" href="#no">LALISA</a>
-                            <p class="albumHot-singer"><a class="name-singer-top-music" href="#no">Lisa</a></p>
+                            <a class="the-name-song-list-album-link" href="#no"><?php echo $item['name'] ?></a>
+                            <p class="albumHot-singer"><a class="name-singer-top-music" href="#no"><?php echo $item['name'] ?></a></p>
                         </li>
-                        <li class="list-album-content">
-                            <a href="#no">
-                                <div class="list-album-image Drawing">
-                                    <img src="./public/site/img/playlistHotNhat/drawing.jpg" alt="">
-                                    <div class="overlay-hover">
-                                        <i class="far fa-play-circle fa-3x play-icon-mv-1"></i>
-                                    </div>
-                                </div>
-                            </a>
-                            <a class="the-name-song-list-album-link" href="#no">Drawing</a>
-                            <p class="albumHot-singer"><a class="name-singer-top-music" href="#no">Lee Hong Gi</a></p>
-                        </li>
-                        <li class="list-album-content">
-                            <a href="#no">
-                                <div class="list-album-image shapeoflove">
-                                    <img src="./public/site/img/playlistHotNhat/shapeoflove.jpg" alt="">
-                                    <div class="overlay-hover">
-                                        <i class="far fa-play-circle fa-3x play-icon-mv-1"></i>
-                                    </div>
-                                </div>
-                            </a>
-                            <a class="the-name-song-list-album-link" href="#no">Shape of Love</a>
-                            <p class="albumHot-singer"><a class="name-singer-top-music" href="#no">Seo Ja Yeong</a></p>
-                        </li>
-                        <li class="list-album-content">
-                            <a href="#no">
-                                <div class="list-album-image 30">
-                                    <img src="./public/site/img/playlistHotNhat/30.jpg" alt="">
-                                    <div class="overlay-hover">
-                                        <i class="far fa-play-circle fa-3x play-icon-mv-1"></i>
-                                    </div>
-                                </div>
-                            </a>
-                            <a class="the-name-song-list-album-link" href="#no">30</a>
-                            <p class="albumHot-singer"><a class="name-singer-top-music" href="#no">Adele</a></p>
-                        </li>
-                        <li class="list-album-content">
-                            <a href="#no">
-                                <div class="list-album-image red">
-                                    <img src="./public/site/img/playlistHotNhat/redtaylor.jpg" alt="">
-                                    <div class="overlay-hover">
-                                        <i class="far fa-play-circle fa-3x play-icon-mv-1"></i>
-                                    </div>
-                                </div>
-                            </a>
-                            <a class="the-name-song-list-album-link" href="#no">Red(Taylor's Version)</a>
-                            <p class="albumHot-singer"><a class="name-singer-top-music" href="#no">Taylor Swift</a></p>
-                        </li>
+                        <?php endforeach ?>
 
                     </ul>
                     <ul class="list-album-content-box albumHot-content-box">
+                        <?php foreach($album2 as $item) :?>
                         <li class="list-album-content">
                             <a href="#no">
-                                <div class="list-album-image  Lullaby">
-                                    <img src="./public/site/img/playlistHotNhat/lullaby.jpg" alt="">
+                                <div class="list-album-image  LALISA">
+                                    <img src="<?php echo $base_url.$item['img'] ?>" alt="">
                                     <div class="overlay-hover">
                                         <i class="far fa-play-circle fa-3x play-icon-mv-1"></i>
                                     </div>
                                 </div>
                             </a>
-                            <a class="the-name-song-list-album-link" href="#no">Lullaby</a>
-                            <p class="albumHot-singer"><a class="name-singer-top-music" href="#no">The Piano Guys</a></p>
+                            <a class="the-name-song-list-album-link" href="#no"><?php echo $item['name'] ?></a>
+                            <p class="albumHot-singer"><a class="name-singer-top-music" href="#no"><?php echo $item['name'] ?></a></p>
                         </li>
-                        <li class="list-album-content">
-                            <a href="#no">
-                                <div class="list-album-image homesick">
-                                    <img src="./public/site/img/playlistHotNhat/homesick.jpg" alt="">
-                                    <div class="overlay-hover">
-                                        <i class="far fa-play-circle fa-3x play-icon-mv-1"></i>
-                                    </div>
-                                </div>
-                            </a>
-                            <a class="the-name-song-list-album-link" href="#no">HOMESICK(EP)</a>
-                            <p class="albumHot-singer"><a class="name-singer-top-music" href="#no">RAUDI</a></p>
-                        </li>
-                        <li class="list-album-content">
-                            <a href="#no">
-                                <div class="list-album-image yeuroiyeu">
-                                    <img src="./public/site/img/playlistHotNhat/yeuroiyeu.jpg" alt="">
-                                    <div class="overlay-hover">
-                                        <i class="far fa-play-circle fa-3x play-icon-mv-1"></i>
-                                    </div>
-                                </div>
-                            </a>
-                            <a class="the-name-song-list-album-link" href="#no">Yêu Rồi Yêu Rồi Yêu</a>
-                            <p class="albumHot-singer"><a class="name-singer-top-music" href="#no">Tóc Tiên</a></p>
-                        </li>
-                        <li class="list-album-content">
-                            <a href="#no">
-                                <div class="list-album-image hatchoemnghe">
-                                    <img src="./public/site/img/playlistHotNhat/hatchoemnghe.jpg" alt="">
-                                    <div class="overlay-hover">
-                                        <i class="far fa-play-circle fa-3x play-icon-mv-1"></i>
-                                    </div>
-                                </div>
-                            </a>
-                            <a class="the-name-song-list-album-link" href="#no">The Show: Hát Cho Em</a>
-                            <p class="albumHot-singer"><a class="name-singer-top-music" href="#no">Issac</a></p>
-                        </li>
-                        <li class="list-album-content">
-                            <a href="#no">
-                                <div class="list-album-image christmaseve">
-                                    <img src="./public/site/img/playlistHotNhat/christmasever.jpg" alt="">
-                                    <div class="overlay-hover">
-                                        <i class="far fa-play-circle fa-3x play-icon-mv-1"></i>
-                                    </div>
-                                </div>
-                            </a>
-                            <a class="the-name-song-list-album-link" href="#no">Christmas Evel</a>
-                            <p class="albumHot-singer"><a class="name-singer-top-music" href="#no">Stray Kids</a></p>
-                        </li>
+                        <?php endforeach ?>
 
                     </ul>
                     <ul class="list-album-content-box albumHot-content-box">
+                        <?php foreach($album3 as $item) :?>
                         <li class="list-album-content">
                             <a href="#no">
-                                <div class="list-album-image  hometownchachacha">
-                                    <img src="./public/site/img/playlistHotNhat/hometownchachacha.jpg" alt="">
+                                <div class="list-album-image  LALISA">
+                                    <img src="<?php echo $base_url.$item['img'] ?>" alt="">
                                     <div class="overlay-hover">
                                         <i class="far fa-play-circle fa-3x play-icon-mv-1"></i>
                                     </div>
                                 </div>
                             </a>
-                            <a class="the-name-song-list-album-link" href="#no">Hometown Cha-Cha-Cha OST </a>
-                            <p class="albumHot-singer"><a class="name-singer-top-music" href="#no">V.A</a></p>
+                            <a class="the-name-song-list-album-link" href="#no"><?php echo $item['name'] ?></a>
+                            <p class="albumHot-singer"><a class="name-singer-top-music" href="#no"><?php echo $item['name'] ?></a></p>
                         </li>
-                        <li class="list-album-content">
-                            <a href="#no">
-                                <div class="list-album-image Drawing">
-                                    <img src="./public/site/img/playlistHotNhat/drawing.jpg" alt="">
-                                    <div class="overlay-hover">
-                                        <i class="far fa-play-circle fa-3x play-icon-mv-1"></i>
-                                    </div>
-                                </div>
-                            </a>
-                            <a class="the-name-song-list-album-link" href="#no">Drawing</a>
-                            <p class="albumHot-singer"><a class="name-singer-top-music" href="#no">Lee Hong Gi</a></p>
-                        </li>
-                        <li class="list-album-content">
-                            <a href="#no">
-                                <div class="list-album-image shapeoflove">
-                                    <img src="./public/site/img/playlistHotNhat/shapeoflove.jpg" alt="">
-                                    <div class="overlay-hover">
-                                        <i class="far fa-play-circle fa-3x play-icon-mv-1"></i>
-                                    </div>
-                                </div>
-                            </a>
-                            <a class="the-name-song-list-album-link" href="#no">Shape of Love</a>
-                            <p class="albumHot-singer"><a class="name-singer-top-music" href="#no">Seo Ja Yeong</a></p>
-                        </li>
-                        <li class="list-album-content">
-                            <a href="#no">
-                                <div class="list-album-image shapeoflove">
-                                    <img src="./public/site/img/playlistHotNhat/shapeoflove.jpg" alt="">
-                                    <div class="overlay-hover">
-                                        <i class="far fa-play-circle fa-3x play-icon-mv-1"></i>
-                                    </div>
-                                </div>
-                            </a>
-                            <a class="the-name-song-list-album-link" href="#no">Shape of Love</a>
-                            <p class="albumHot-singer"><a class="name-singer-top-music" href="#no">Seo Ja Yeong</a></p>
-                        </li>
-                        <li class="list-album-content">
-                            <a href="#no">
-                                <div class="list-album-image shapeoflove">
-                                    <img src="./public/site/img/playlistHotNhat/shapeoflove.jpg" alt="">
-                                    <div class="overlay-hover">
-                                        <i class="far fa-play-circle fa-3x play-icon-mv-1"></i>
-                                    </div>
-                                </div>
-                            </a>
-                            <a class="the-name-song-list-album-link" href="#no">Shape of Love</a>
-                            <p class="albumHot-singer"><a class="name-singer-top-music" href="#no">Seo Ja Yeong</a></p>
-                        </li>
+                        <?php endforeach ?>
 
                     </ul>
                 </div>

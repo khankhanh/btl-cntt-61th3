@@ -1,5 +1,16 @@
 
 <?php require_once(__DIR__ .'/layout/header.php') ?>
+
+<?php
+    
+    
+    $sql_music  = "SELECT * FROM `music` ORDER BY `views` DESC";
+    $music = $db->fetchAll($sql_music);
+
+
+
+?>
+
     <link rel="stylesheet" href="./public/site/css/baihat.css">
     <div class="main">
         <div class="box-container">
@@ -116,13 +127,14 @@
                     <div class="list_music_listgender">
                         <div class="fram_select">
                             <ul class="listgender">
+                                <?php foreach($music as $item) :?>
                                 <li>
                                     <div class="box-content-music-list">
                                         <div class="info_song" style="color: #999999;">
                                             <a href="#no" class="avatar_song" title="Ưu Tư - Tuấn Hii">
-                                                <img src="./public/site/img/imgmain/uutu.jpg" alt="uu tu - tuan hii" title="Ưu Tư - Tuấn Hii">
+                                                <img src="<?php echo $base_url.$item['img']?>" alt="<?php echo $item['slug']?>" title="<?php echo $item['name']?>">
                                             </a>
-                                            <h2><a href="#no" class="name_song" title="Ưu Tư - Tuấn Hii">Ưu Tư</a></h2>
+                                            <h2><a href="#no" class="name_song" title="<?php echo $item['slug']?>"><?php echo $item['name']?></a></h2>
                                             <div class="name_sing_under"><a href="#no" class="name_singer" title="Tìm các bài hát, playlist, mv do ca sĩ Tuấn Hii trình bày" target="_blank">Tuấn Hii</a></div>
                                         </div>
 
@@ -131,106 +143,15 @@
 
                                             <span class="icon-tag-hd" title="High Quality (Chất Lượng Cao)">HQ</span>
                                         </div>
-                                        <span class="icon_listen">12.063</span>
+                                        <span class="icon_listen"><?php echo $item['views']?></span>
                                         <div class="box_song_action">
-                                            <a href="#no" class="button_playing" title="Nghe bài hát Ưu Tư - Tuấn Hii"></a>
-                                            <a href="#no" class="button_add_playlist" title="Thêm bài hát Ưu Tư - Tuấn Hii vào playlist yêu thích"></a>
-                                            <a href="#no" target="_blank" class="button_new_window" title="Nghe bài hát Ưu Tư - Tuấn Hii ở cửa sổ mới"></a>
+                                            <a href="./phatnhac.php?name=<?php echo $item['slug']?>" class="button_playing" title="Nghe bài hát <?php echo $item['name']?>"></a>
+                                            <a href="./phatnhac.php?name=<?php echo $item['slug']?>" class="button_add_playlist" title="Thêm bài hát <?php echo $item['name']?> vào playlist yêu thích"></a>
+                                            <a href="./phatnhac.php?name=<?php echo $item['slug']?>" target="_blank" class="button_new_window" title="Nghe bài hát <?php echo $item['name']?> ở cửa sổ mới"></a>
                                         </div>
                                     </div>
                                 </li>
-                                <li>
-                                    <div class="box-content-music-list">
-                                        <div class="info_song" style="color: #999999;">
-                                            <a href="#no" class="avatar_song" title="Yêu Trong Nắng Mai - Hồ Văn Quý,Lê Vũ">
-                                                <img src="./public/site/img/imgmain/yeutrongnangmai.jpg" title="Yêu Trong Nắng Mai - Hồ Văn Quý,Lê Vũ">
-                                            </a>
-                                            <h2><a href="#no" class="name_song" title="Yêu Trong Nắng Mai - Hồ Văn Quý,Lê Vũ">Yêu Trong Nắng Mai</a></h2>
-                                            <div class="name_sing_under"><a href="#no" class="name_singer" title="Tìm các bài hát, playlist, mv do ca sĩ Hồ Văn Quý,Lê Vũ trình bày" target="_blank">Hồ Văn Quý,Lê Vũ</a></div>
-                                        </div>
-
-                                        <div class="list_mark">
-                                            <span class="icon-tag-official" title="Bản Chính Thức">Official</span>
-
-                                            <span class="icon-tag-hd" title="High Quality (Chất Lượng Cao)">HQ</span>
-                                        </div>
-                                        <span class="icon_listen">4.936</span>
-                                        <div class="box_song_action">
-                                            <a href="#no" class="button_playing" title="Nghe bài hát Yêu Trong Nắng Mai - Hồ Văn Quý,Lê Vũ"></a>
-                                            <a href="#no" class="button_add_playlist" title="Thêm bài hát Yêu Trong Nắng Mai - Hồ Văn Quý,Lê Vũ vào playlist yêu thích"></a>
-                                            <a href="#no" target="_blank" class="button_new_window" title="Nghe bài hát Yêu Trong Nắng Mai - Hồ Văn Quý,Lê Vũ ở cửa sổ mới"></a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="box-content-music-list">
-                                        <div class="info_song" style="color: #999999;">
-                                            <a href="#no" class="avatar_song" title="Sài Gòn 20 Km - Leo">
-                                                <img src="./public/site/img/imgmain/saigon20km.jpg" title="Sài Gòn 20 Km - Leo">
-                                            </a>
-                                            <h2><a href="#no" class="name_song" title="Sài Gòn 20 Km - Leo">Sài Gòn 20 Km</a></h2>
-                                            <div class="name_sing_under"><a href="#no" class="name_singer" title="Tìm các bài hát, playlist, mv do ca sĩ Leo trình bày" target="_blank">Hồ Văn Quý,Lê Vũ</a></div>
-                                        </div>
-
-                                        <div class="list_mark">
-                                            <span class="icon-tag-official" title="Bản Chính Thức">Official</span>
-
-                                            <span class="icon-tag-hd" title="High Quality (Chất Lượng Cao)">HQ</span>
-                                        </div>
-                                        <span class="icon_listen">5.438</span>
-                                        <div class="box_song_action">
-                                            <a href="#no" class="button_playing" title="Nghe bài hát Sài Gòn 20 Km - Leo"></a>
-                                            <a href="#no" class="button_add_playlist" title="Thêm bài hát Sài Gòn 20 Km - Leo vào playlist yêu thích"></a>
-                                            <a href="#no" target="_blank" class="button_new_window" title="Nghe bài hát Sài Gòn 20 Km - Leo ở cửa sổ mới"></a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="box-content-music-list">
-                                        <div class="info_song" style="color: #999999;">
-                                            <a href="#no" class="avatar_song" title="Bởi Vì Yêu - Juky San">
-                                                <img src="./public/site/img/imgmain/boiviyeu.jpg" title="Bởi Vì Yêu - Juky San">
-                                            </a>
-                                            <h2><a href="#no" class="name_song" title="Bởi Vì Yêu - Juky San">Bởi Vì Yêu</a></h2>
-                                            <div class="name_sing_under"><a href="#no" class="name_singer" title="Tìm các bài hát, playlist, mv do ca sĩ Juky San trình bày" target="_blank">Hồ Văn Quý,Lê Vũ</a></div>
-                                        </div>
-
-                                        <div class="list_mark">
-                                            <span class="icon-tag-official" title="Bản Chính Thức">Official</span>
-
-                                            <span class="icon-tag-lossless" title="Super Quality (LossLess)">SQ</span>
-                                        </div>
-                                        <span class="icon_listen">225.860</span>
-                                        <div class="box_song_action">
-                                            <a href="#no" class="button_playing" title="Nghe bài hát Bởi Vì Yêu - Juky San"></a>
-                                            <a href="#no" class="button_add_playlist" title="Thêm bài hát Bởi Vì Yêu - Juky San vào playlist yêu thích"></a>
-                                            <a href="#no" target="_blank" class="button_new_window" title="Nghe bài hát Bởi Vì Yêu - Juky San ở cửa sổ mới"></a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="box-content-music-list">
-                                        <div class="info_song" style="color: #999999;">
-                                            <a href="#no" class="avatar_song" title="Đế Vương - Đình Dũng,ACV">
-                                                <img src="./public/site/img/imgmain/devuong.jpg" title="Đế Vương - Đình Dũng,ACV">
-                                            </a>
-                                            <h2><a href="#no" class="name_song" title="Đế Vương - Đình Dũng,ACV">Đế Vương</a></h2>
-                                            <div class="name_sing_under"><a href="#no" class="name_singer" title="Tìm các bài hát, playlist, mv do ca sĩ Đình Dũng,ACV trình bày" target="_blank">Hồ Văn Quý,Lê Vũ</a></div>
-                                        </div>
-
-                                        <div class="list_mark">
-                                            <span class="icon-tag-official" title="Bản Chính Thức">Official</span>
-
-                                            <span class="icon-tag-hd" title="High Quality (Chất Lượng Cao)">HQ</span>
-                                        </div>
-                                        <span class="icon_listen">1.533.313</span>
-                                        <div class="box_song_action">
-                                            <a href="#no" class="button_playing" title="Nghe bài hát Đế Vương - Đình Dũng,ACV"></a>
-                                            <a href="#no" class="button_add_playlist" title="Thêm bài hát Đế Vương - Đình Dũng,ACV vào playlist yêu thích"></a>
-                                            <a href="#no" target="_blank" class="button_new_window" title="Nghe bài hát Đế Vương - Đình Dũng,ACV ở cửa sổ mới"></a>
-                                        </div>
-                                    </div>
-                                </li>
+                                <?php endforeach ?>
                             </ul>
                         </div>
                     </div>
