@@ -1,0 +1,186 @@
+#htmlSigninForm{
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1000000;
+    width: 100%;
+ }
+ .full_bglightbox {
+    background: rgba(34, 34, 34, 0.6);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 999999;
+}
+.content-user-login {
+    width: 800px;
+    margin: 0 auto;
+}
+.page_lightbox {
+    width: 800px;
+    top: 50px;
+    box-shadow: 1px 1px 6px #333;
+    border-radius: 4px;
+    background: #FFFFFF;
+    position: fixed;
+    z-index: 999999;
+}
+.title_lightbox {
+    width: 770px;
+    padding: 10px 10px 10px 20px;
+    font-weight: 700;
+    font-size: 18px;
+    border-bottom: 1px solid #dbdbdb!important;
+}
+.title_lightbox label{
+    text-transform: uppercase;
+}
+.close_icon{
+    width: 12px;
+    height: 12px;
+    display: block;
+    float: right;
+    text-decoration:none;
+}
+.close_icon img{
+    width: 15px;
+}
+ .content-lightbox{
+    float: left;
+    width: 500px;
+    padding: 8px 10px 30px 0px;
+    height: auto;
+    border-right: #dbdbdb solid 1px;
+}
+.fun_login {
+    border-top: 0px;
+    float: left;
+    width: 450px;
+    color: #333333;
+}
+.txt-alert-required {
+    float: left;
+    width: 478px;
+    text-align: right;
+    margin: 0 0 10px 0;
+    font-size: 12px;
+    color: #999999;
+}
+.pdform {
+    float: left;
+    width: 510px;
+    font-size: 13px;
+    padding: 3px 0px;
+}
+.txt-required {
+    float: left;
+    width: 478px;
+    text-align: right;
+    margin: 0 0 10px 0;
+    font-size: 12px;
+    color: #999999;
+}
+.lb {
+    float: left;
+    width: 130px;
+    font-size: 15px;
+    text-align: right;
+    margin-bottom: 3px;
+    padding: 0 15px 0 0;
+}
+.row {
+    margin-bottom: 10px;
+}
+.box_more_option {
+    float: left;
+    width: 350px;
+    line-height: 16px;
+    padding: 5px 0px 0px 0px;
+    margin: 0 0 0 142px;
+}
+.box_more_option .terms{
+    text-decoration: none;
+    font-size: 14px;
+    color: #2daaed;
+}
+.terms:hover {
+    text-decoration: underline;
+}
+.lost_pw {
+    background: none;
+    font-weight: normal;
+    color: #0689ba;
+    font-size: 14px;
+    margin: 0px 30px 0 0;
+    float: right;
+    text-decoration: none;
+}
+.login_submit {
+    float: left;
+    width: 290px;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 36px;
+    margin: 30px 0px 0px 145px;
+    background: #2daaed;
+    color: #ffffff;
+    text-decoration: none;
+}
+.box-right-login {
+    float: left;
+    width: 259px;
+    padding: 0px 10px 15px 10px;
+    border-left: #dbdbdb solid 1px;
+    margin: 0 0 0 -1px;
+}
+.box-user-have-acc {
+    float: left;
+    width: 100%;
+    padding: 0px 0;
+    margin: 10px 0 10px 0;
+}
+.txt-alert-user {
+    float: left;
+    width: 100%;
+    text-align: center;
+    font-size: 13px;
+}
+.box-show-btn {
+    float: left;
+    width: 100%;
+    text-align: center;
+    height: 36px;
+    line-height: 36px;
+    margin: 10px 0 10px 0;
+}
+.btn-action-login-register {
+    background: #e74c3c;
+    display: inline-block;
+    font-size: 15px;
+    width: 229px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white;
+}
+.title-or{
+    margin-left: 105px;
+}
+.login-social {
+    float: left;
+    margin: 0 0 10px 0;
+}
+.login-social a{
+    float: left;
+    text-decoration: none;
+    margin-left: 15px;
+}
+.login-social img{
+    float: left;
+}
+.name-social {
+    color: black;
+    margin-left: 10px;
+}
+.login-social:hover .name-social{
+    color: #2daaed;
+}

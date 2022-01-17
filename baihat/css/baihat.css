@@ -1,0 +1,916 @@
+/* header*/
+.header{
+	z-index: 199;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: #fff;
+	width: 100%;
+}
+.menu-bar {
+	height: 100%;
+/*	to center menu-bar */
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	background-color: #fff;
+    padding-left: 154px;
+	padding:0;
+}
+
+.menu {
+	height: 42px;
+	width: max-content;
+	border: none;
+	padding: 0px;
+	display: flex;
+}
+
+.left-menu {
+	margin-right: 35px;
+    padding-top: 5px;
+}
+
+.nct-image {
+	padding: 6px 8px 6px 0px;
+	height: 40px;
+	width: 65px;
+}
+  .ic_store-image{
+    height: 26px;
+    margin: 10px 10px;
+  }
+  .ic_upload-image{
+    height: 26px;
+    margin: 10px 10px 10px 0;
+  }
+  .input-group-prepend{
+   font-size: 0.8rem;
+  }
+  .button-signin-item{
+	  margin-top: 9px;
+	  margin-left: 10px;
+  }
+.signin-link{
+    text-decoration: none;
+    color: gray;
+	font-size: 0.9rem;
+}
+.button-signup-item{
+	height: 30px;
+	width: 80px;
+	border-radius: 5px;
+	background-image: linear-gradient(45deg, #2f80ed 0%, #00aeef 100%);
+	margin : 8px 0 0 5px;
+}
+.signup-link{
+	color: white;
+	padding-left: 12px;
+    text-decoration: none;
+	font-size: 0.9rem;
+}
+
+.nct-image-link {
+	padding-right: 5px;
+}
+
+.submenu {
+	width: max-content;
+	height: 44px;
+	padding: 0px 16px 8px 0px;
+	font-size: 15px;
+	font-weight: 300;
+	font-family: sans-serif;
+
+}
+
+.submenu-8 {
+	padding-left: 9px;
+}
+
+.title-submenu-box {
+	width: 100%;
+	height: 100%;
+	/* to center the title in submenu box */
+	display: flex;
+	align-items: center;
+}
+
+.submenu:hover {
+	position: relative;
+}
+.hidden-menu {
+	display: none;
+	flex-direction: row;
+	width: max-content;
+	background-color: #FFF;
+	border: 1px solid #DDD;
+	box-shadow: 1px 1px rgba(0,0,0,0.1);
+	position: absolute;
+	padding-top: 15px;
+	top: 97%;
+	z-index: 1 !important;
+}
+
+.submenu:hover .title-submenu {
+	color: #2daaed;
+}
+.submenu:hover .hidden-menu {
+	display: flex;
+}
+
+.submenu a {
+	color: #222;
+	text-decoration: none;
+}
+.submenu a:hover {
+	color: #2daaed;
+}
+
+.list{
+	list-style: none;
+	padding-left: 50px;
+}
+
+.list-1 {
+	padding-left: 20px;
+}
+
+.hidden-menu:last-child {
+	padding-right: 20px;
+}
+
+
+.list li {
+	margin-bottom: 15px;
+	
+}
+
+.list li:first-child {
+	font-weight: bold;
+}
+
+.submenu-icon {
+	padding-right: 22px;
+}
+
+
+.submenu-icon:hover .title-submenu {
+	color: #999;
+}
+.hidden-menu-icon {
+	width: max-content;
+	border-radius: 8px 8px;
+	padding: 0px !important;
+	left: -15px;
+}
+
+.list-icon {
+	list-style: none;
+	padding: 0px;
+	margin: 0px;
+}
+
+.list-icon li {
+	width: 150px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    margin: 0px 15px;
+    border-bottom: 1px solid #DDD;
+}
+
+
+.list-icon li:last-child {
+	border-bottom: 0px;
+}
+
+/* main left box 1*/
+.main{
+	width: 100%;
+	position: relative;
+	top: 53px;
+}
+.box-container{
+	height: 100%;
+}
+.box-container .box-left{
+	width: 60%;
+	margin-left: 150px;
+	float: left;
+}
+.box-left .box_cata_control{
+	float: left;
+	margin: 0;
+	margin-top: 10px;
+}
+.detail_menu_browsing_dashboard{
+	width: 840px;
+	float: left;
+	margin-bottom: 10px;
+}
+.detail_menu_browsing_dashboard .cate{
+    height: 70px;
+	text-decoration: none;
+}
+.detail_menu_browsing_dashboard h3{
+	font-size: 15px;
+	text-transform: uppercase;
+	font-weight: bold;
+	cursor:context-menu;
+}
+
+.detail_menu_browsing_dashboard  li{
+text-decoration: none;
+list-style-type: none!important;
+width: 160px;
+float: left;
+margin-bottom: 10px;
+}
+.detail_menu_browsing_dashboard  a:hover{
+	background-color: #e74c3c;
+	color: white;
+} 
+.detail_menu_browsing_dashboard .cate a{
+	background: none !important;
+}
+.detail_menu_browsing_dashboard li a{
+	text-decoration: none;
+	line-height: 22px;
+	color: black;
+	width: auto;
+	border-radius: 5px;
+	background-size: 17px auto;
+	float: left;
+	display: list-item;
+	background: url(https://stc-id.nixcdn.com/v11/images/icon-repeat.png) 0px -2002px no-repeat;
+	background-size: 17px auto;
+	padding: 2px 10px 2px 18px;
+}
+.detail_menu_browsing_dashboard li a.active{
+	background-color: #e74c3c;
+	color: white;
+
+}
+.cate a:hover{
+	background-color: white;
+}
+.detail_menu_browsing_dashboard .line{
+	width: 100%;
+	border-bottom: 1px solid #e5e5e5;
+	height: 1px;
+	margin-bottom: 10px;
+}
+.view_more_list {
+	position: relative;
+}
+
+ .dot_more{
+	position: absolute;
+	margin-top: 30px;
+	box-shadow: 0 0 10px rgba(0,0,0,0.3);
+	display: none;
+	background-color: white;
+
+}
+
+.detail_menu_browsing_dashboard li:hover .dot_more{
+	display:block;
+}
+#listchild_aumy{
+	cursor: pointer;
+	color: #999;
+
+}
+#listchild_aumy:hover{
+	color: white;
+}
+
+.dot_more a:hover{
+	background-color: white;
+	color: #e74c3c;
+}
+/* Main left box 2 */
+.album__container{
+	float: left;
+}
+.title_box_key_left>h1>a{
+	color: #2daaed;
+	text-decoration: none;
+	font-size: 30px;
+	font-weight: normal;
+    margin-left: 30px;
+}
+.list_music_listgender {
+    width: 840px;
+    float: left;
+    margin-bottom: 50px;
+}
+.listgender{
+    list-style-type: none;
+}
+.listgender li {
+    width: 100%;
+    float: left;
+    margin-right: 30px;
+    border-top: #ececec solid 1px;
+    padding: 5px 0px;
+}
+.box-content-music-list{
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+.info_song{
+    width: calc(100% - 400px);
+    float: left;
+    font-size: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.info_song a{
+    color: rgba(0,0,0,0.88);
+    text-decoration: none;
+    transition: all 0.2s linear;
+}
+.info_song a:hover {
+    color: #2daaed;
+}
+.avatar_song img {
+    width: 60px;
+    height: 60px;
+    float: left;
+    margin-right: 16px;
+    vertical-align: middle;
+    border: 0;
+
+}
+.list_mark{
+    float: left;
+    width: 150px;
+    height: 100%;
+    margin-right: 20px;
+}
+
+.info_song h2{
+    display: block;
+    margin-bottom: 20px;
+    height: 20px;
+}
+.name_song{
+    font-size: 16px;
+    float: none;
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 24px;
+    font-weight: normal;
+}
+.name_sing_under {
+    display: block;
+}
+.list_mark{
+    margin-top: 17px;
+    float: left;
+    width: 150px;
+    height: 100%;
+    margin-right: 20px;
+}
+.icon-tag-official{
+    padding: 1px 8px;
+    font-size: 13px;
+    text-transform: uppercase;
+    background: #ccc;
+    color: rgba(255,255,255,1.00);
+    border-radius: 3px;
+    margin: 0 5px 0 0;
+}
+.icon-tag-hd{
+    padding: 1px 8px;
+    font-size: 13px;
+    text-transform: uppercase;
+    background: #00adef;
+    color: rgba(255,255,255,1.00);
+    border-radius: 3px;
+    margin: 0 5px 0 0;
+}
+.icon-tag-lossless{
+    padding: 1px 8px;
+    font-size: 13px;
+    text-transform: uppercase;
+    background: #e74c3c;
+    color: rgba(255,255,255,1.00);
+    border-radius: 3px;
+    margin: 0 5px 0 0;
+}
+.icon_listen{
+    float: left;
+    position: relative;
+    color: #999999;
+    right: 0;
+    font-size: 12px;
+    background: url(https://stc-id.nixcdn.com/v11/images/icon-repeat.png) left -194px no-repeat;
+    padding-left: 15px;
+    line-height: 24px;
+    display: block;
+    margin: 18px 0 0 0;
+}
+.box_song_action{
+    float: right;
+    position: relative;
+    margin-top: 20px;
+    display: block;
+    width: 95px;
+    background: #FFF;
+    height: 14px;
+    right: 0;
+    padding: 0 0 0 10px;
+}
+.button_playing{
+    width: 10px;
+    height: 14px;
+    background: url(https://stc-id.nixcdn.com/v11/images/icon.png) -30px top no-repeat;
+    display: block;
+    float: left;
+    margin-right: 12px;
+}
+.button_add_playlist{
+    width: 16px;
+    height: 14px;
+    background: url(https://stc-id.nixcdn.com/v11/images/icon.png) -44px top no-repeat;
+    display: block;
+    float: left;
+    margin: 0px 12px 0px 0px;
+}
+.button_new_window{
+    width: 14px;
+    height: 14px;
+    background: url(https://stc-id.nixcdn.com/v11/images/icon.png) left top no-repeat;
+    display: block;
+    float: left;
+    margin: 0 15px 0px 0px;
+}
+
+/* css box-right */
+.box-right{
+    float: left;
+}
+/* css box-right 1 */
+.box_chart_music {
+    float: left;
+    width: 300px;
+    padding: 0 0 10px 0;
+    margin-top: 10px;
+}
+.title_box_key {
+    width: 100%;
+    float: left;
+}
+.title_box_key h3 {
+    color: #2daaed;
+    float: left;
+    display: block;
+    width: auto;
+    font-size: 26px;
+    text-transform: uppercase;
+    font-weight: 300;
+    line-height: 36px;
+    margin: 0 0 10px 0;
+}
+.title_box_key h3 a{
+    color: #2daaed;
+    text-transform: uppercase;
+    padding: 0 20px 0 0;
+    font-weight: 400 !important;
+    text-decoration: none;
+}
+
+.btn_tab_select {
+    float: right;
+    padding: 0px 0px;
+    width: 300px;
+    margin-bottom: 20px;
+    height: 32px;
+    background: #e5e5e5;
+    line-height: 32px;
+    border-radius: 16px;
+    overflow: hidden;
+}
+.btn_tab_select a{
+    text-decoration: none;
+    color: black;
+    float: left;
+    text-align: center;
+    font-size: 14px;
+    width: 100px;
+}
+.btn_tab_select a:hover{
+	color: #fff;
+    background: #e74c3c;
+}
+.btn_tab_select a.active {
+    color: #fff;
+    background: #e74c3c;
+}
+
+/* css box right 2*/
+.box-right{
+	float: left;
+	margin-top: 15px;
+
+}
+
+.title_box_key_right>h3>a{
+	text-decoration: none;
+	font-size: 30px;
+	font-weight: 300;
+	color: #2daaed;
+}
+.list-singer-content-box{
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+	display: flex;
+
+}
+.list-singer-content{
+	display: list-item;
+}
+.list-singer-content:hover .overlay-hover-1{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+	background-color: rgba(0,0,0,0.6);
+	transition: all 0.5s;
+}
+.list-singer-content a {
+	text-decoration: none;
+}
+.list-singer-image{
+	margin-bottom: 10px;
+	margin-right: 10px;
+	position: relative;
+	z-index: -1;
+}
+@keyframes fadeIn {
+	0%{
+		opacity: 0.5;
+	}
+	100%{
+		opacity: 1;
+	}
+}
+.overlay-hover-1{
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	color: whitesmoke;
+	display: none;
+    animation: fadeIn 0.25s ease-in;
+}
+.info-name-singer{
+	color: whitesmoke;
+	font-size: 30px;
+}
+.info-name-singer:hover{
+	color: whitesmoke;
+}
+.info-name-singer-2{
+	color: whitesmoke;
+}
+.info-name-singer-2:hover{
+	color: whitesmoke;
+}
+
+/* page */
+.box_pageview{
+	float: left;
+	width: 55%;
+	text-align: center;
+	height: 40px;
+	margin: 20px 0 20px 150px;
+    background: #e5e5e5;
+}
+.box_pageview a {
+    padding: 7px 15px;
+    font-size: 15px;
+    height: 40px;
+    line-height: 40px;
+	text-decoration: none;
+	color: black;
+}
+.box_pageview a:hover{
+	color: #e74c3c;
+}
+
+
+
+/* css footer */
+.footer{
+	width: 100%;
+	float: left;
+	background-color: #f5f5f5;
+	display: block;
+	margin-top: 100px;
+}
+/*list-cooperation*/
+.list-cooperation {
+	background-color: #efefef;
+	margin-bottom: 10px;
+	width: 100%;
+	float: left;
+}
+
+.list-cooperation-box {
+	display: flex;
+	flex-direction: column;
+	width: 1170px;
+	max-width: 100%;
+	margin: 0 auto;
+}
+
+.titile-list-cooperation {
+	text-transform: uppercase;
+	float: left;
+    font-size: 14px;
+    color: rgba(0,0,0,0.88);
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 16px 0px 0px 0px;
+}
+
+.list-cooperation-logo-box {
+	height: 100px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 0px 28px;
+	position: relative;
+}
+.list-cooperation-logo-box a {
+	text-decoration: none;
+
+}
+
+.button {
+	height: 56px;
+	width: 56px;
+	background-color: rgba(255,255,255,0.8);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 10px;
+	position: absolute;
+
+}
+
+.button a {
+	color: rgba(0,0,0,0.5);
+}
+
+.left-button {
+	left: -37px;
+	top: 25%;
+}
+
+.right-button {
+	right: -30px;
+	top: 25%;
+}
+
+
+.list_cooperation-icon {
+	font-size: 2.3em !important;
+}
+
+/*support-footer*/
+.support-footer {
+	width: 100%;
+	float: left;
+}
+.support-footer-box {
+	height: 100%;
+	display: flex;
+	flex-direction: row;
+	border-bottom: #ccc solid 1px;
+	margin-bottom: 40px;
+	
+}
+.navigation {
+    width: calc(33.333333% - 48px);
+    float: left;
+    margin: 0 ;
+}
+.navigation-1{
+	margin-left: 170px;
+}
+.navigation-title {
+	margin: 40px 0px 8px 0px;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 14px;
+
+}
+.navigation-list-box {
+	padding: 0;
+	display: flex;
+	width: 100%;
+	margin: 0px;
+}
+.navigation-list-box li {
+	width: 50%;
+	list-style: none;
+	position: relative;
+	padding: 11px 15px;
+}
+
+.navigation-list-box a {
+	float: left;
+	font-size: 12px;
+	color: rgba(0,0,0,0.5);
+	text-decoration: none;
+}
+
+.navigation-list-box a:hover {
+	color: #2daaed;
+}
+
+.navigation-icon {
+	opacity: 0.3;
+	position: absolute;
+    top: 15.4px;
+    left: 0px;
+    font-size: 0.7em !important;
+}
+.hot-keyword{
+	width: calc(33.333333%);
+	float:left;
+}
+.hot-keyword-title {
+	margin: 40px 0px 8px 0px;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 14px;
+}
+
+.hot-keyword-title-2 {
+	margin: 15px 0px 16px 0px;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 14px;
+}
+.keywords-box a{
+	font-size: 14px;
+	color: #2daaed;
+	text-decoration: none;	
+	display: inline-block;
+}
+
+.logo-in-keyword-box {
+	float: left;
+	width: 100%;
+	margin-bottom: 16px;
+
+}
+
+.logo-in-keyword-box a {
+	text-decoration: none;
+}
+
+.logo-in-keyword-box img {
+	width: 32px;
+	margin-right: 10px;
+}
+
+
+.logo-in-keyword-box-2 {
+	margin-bottom: 40px;
+}
+
+.logo-in-keyword-box-2 img {
+	width: 108px;
+	height: 32px;
+}
+
+/*company-info*/
+
+.company-info {
+	margin-bottom: 20px;
+	width: 100%;
+	height: max-content;
+	display: flex;
+	justify-content: center;
+}
+.company-info-box {
+	width: 1139px;
+	height: 100%;
+	display: flex;
+	flex-direction: row;
+}
+.nct-company-logo {
+    width: 80px;
+    height: 96px;
+    background: url(https://stc-id.nixcdn.com/v11/images/footer/t_logo_company.png) center center no-repeat;
+    background-size: contain;
+    margin: 0 25px 0 0;
+
+}
+.company-info-detail {
+	width: 758px;
+	color: #909090;
+	font-size: 13px;
+	margin-right: 10px;
+
+}
+.detail-name {
+	text-transform: uppercase;
+	font-weight: bold;
+	margin: 0px 0px 17px 0px;
+	font-size: 16px;
+}
+
+.detail-company {
+	margin-bottom: 5px;
+	font-size: 13px;
+	color: #909090;
+	line-height: 22px;
+}
+
+.bo-cong-thuong-logo {
+    width: 120px;
+    height: 126px;
+    background: url('https://stc-id.nixcdn.com/v11/images/footer/t_bo_cong_thuong.png') center center no-repeat;
+    background-size: contain;
+    margin: 0 25px 0 0;
+}
+
+.DMCA-logo {
+    width: 120px;
+	height: 126px;
+	background: url('https://stc-id.nixcdn.com/v11/images/footer/t_dmca.png') center center no-repeat;
+	background-size: contain;
+}
+
+/*copy-right*/
+.copyright {
+	width: 100%;
+	height: 64px;
+	background: rgb(47,128,237);
+	background: linear-gradient(90deg, rgba(47,128,237,1) 0%, rgba(0,174,239,1) 100%);
+
+	display: flex;
+	justify-content: center;
+}
+
+.copyright-box {
+	width: 1139px;
+	height: 100%;
+
+}
+
+.copyright-box a {
+	text-decoration: none;
+	font-size: 13px;
+	color: #fff;
+	font-weight: 300;
+	display: flex;
+	align-items: center;
+	margin-right: 26px;
+	float: left;
+	padding-top: 20px;
+	transition: all 0.2s linear;
+}
+
+.copyright-box a:hover {
+	color: #2daaed;
+}
+
+.copyright-icon {
+	font-size: 1.6em;
+	margin-right: 8px;
+}
+.copyright-note {
+	float: right;
+	font-size: 13px;
+	color: #fff;
+	font-weight: 300;
+	padding-top: 23px;
+}
+
+/* css slide__bar */
+
+
+
+
+
+
+
+
+
